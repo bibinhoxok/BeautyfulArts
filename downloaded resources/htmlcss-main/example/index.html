@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- header -->
+    <section class="home"></section>
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <a href="#">Your Logo</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Room</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="customer_bills.html">Bill</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section style="height: 6vh"></section>
+
+    <!-- table element -->
+    <div class="table_container">
+      <h1>SERVICES LIST</h1>
+      <div class="n1">
+        <div class="search">
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+      <table id="example" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th style="width: 5vw">Service ID</th>
+            <th>Supplier</th>
+            <th>Type</th>
+            <th style="width: 4vw">Price</th>
+            <th>Detail</th>
+            <th style="width: 4.5vw">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- data examle, remember to delete -->
+          <div id="container"></div>
+          <tr onclick="$('#updateFormDiv').slideDown();" id="">
+            <!-- fix id to create data -->
+            <td>S1</td>
+            <td>Management Board of the Apartment</td>
+            <td>management fee of apartment</td>
+            <td>300000</td>
+            <td>fire alarm, repair, etc.</td>
+            <td class="actives-n"><p>avaiable</p></td>
+          </tr>
+          <tr onclick="$('#updateFormDiv').slideDown();" id="">
+            <td>S2</td>
+            <td>Management Board of the Apartment</td>
+            <td>management fee of apartment</td>
+            <td>300000</td>
+            <td>fire alarm, repair, etc.</td>
+            <td class="actives"><p>unavaiable</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- add service button -->
+      <button class="btn" id="openAddFormButton">ADD SERVICE</button>
+    </div>
+
+    <!-- add service form -->
+    <div id="addFormDiv">
+      <a href="#"
+        ><i id="closeAddFormButton" class="material-icons">close</i></a
+      >
+      <h2>ADD NEW SERVICE:</h2>
+      <form id="addForm" action="#">
+        <div class="error" id="idExists"></div>
+        <!-- remember to change id -->
+        <input
+          required
+          name="Supplier"
+          type="text"
+          id="addName"
+          placeholder="Supplier"
+          value=""
+        />
+        <input
+          required
+          name="Type"
+          type="text"
+          id="addSubject"
+          placeholder="Type"
+          value=""
+        />
+        <input
+          required
+          name="price"
+          type="number"
+          id="addAge"
+          placeholder="price"
+          value=""
+        />
+        <input
+          required
+          name="Detial"
+          type="text"
+          id="addSubject"
+          placeholder="Detial"
+          value=""
+        />
+        <select required name="Status" id="addCountry">
+          <option value="1">avaiable</option>
+          <option value="0">unavaiable</option>
+        </select>
+        <ul class="error" id="addError"></ul>
+        <input required type="button" id="save" value="SAVE" />
+      </form>
+    </div>
+    <!--  service detail -->
+    <div id="updateFormDiv">
+      <a href="#"
+        ><i id="closeUpdateFormButton" class="material-icons">close</i></a
+      >
+      <h2>SERVICE DETAILS:</h2>
+      <div class="detailImg"><p>IMG here!</p></div>
+      <div class="detailInfo">
+        <p>
+          <strong>Service ID:</strong>S1
+          <br /><!--  fix here to get data from db -->
+          <strong>Supplier:</strong>Management Board of the Apartment <br />
+          <strong>Type:</strong>management fee of apartment <br />
+          <strong>Price:</strong>300000 <br />
+          <strong>Detail:</strong>fire alarm, repair, etc. <br />
+          <strong>Status:</strong>avaiable <br />
+        </p>
+      </div>
+    </div>
+    <!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script src="/js/scipt.js"></script>
+    <script>
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+          $(".nav").addClass("affix");
+          console.log("OK");
+        } else {
+          $(".nav").removeClass("affix");
+        }
+      });
+    </script>
+  </body>
+</html>

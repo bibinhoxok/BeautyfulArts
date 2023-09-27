@@ -1,0 +1,104 @@
+.login-form img {
+    display: block;
+    width: 80px;
+    margin: 30px auto;
+    box-shadow: 0 5px 10px -7px #333333;
+    border-radius: 50%;
+}
+
+.login-form {
+    display: none;
+    z-index: 14;
+    flex-direction: column;
+    padding: 0px;
+    width: 40vmax;
+    height: 50vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.35), 0 0 22px 6px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.login-form .close-form {
+    display: flex;
+    position: absolute;
+    z-index: 15;
+    top: 0px;
+    right: 0px;
+    flex-direction: column;
+    padding: 0px;
+    width: 2vmax;
+    height: 2vmax;
+    background-color: #0c2e8a;
+    text-align: center;
+    font-size: 2vh;
+    color: #fff;
+    margin: 0px 0px;
+    border-bottom-left-radius: 8px;
+}
+
+.login-form #logo {
+    position: relative;
+    text-align: center;
+    margin: 15px;
+}
+
+.login-form #logo h1 {
+    font-size: 42px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.login-form #logo h1 a {
+    color: #0c2e8a;
+    line-height: 1;
+    display: inline-block;
+}
+
+.login-form #logo h1 a span {
+    color: #50d8af;
+}
+
+.login-form #logo img {
+    padding: 0;
+    margin: 0;
+}
+
+.login-form input {
+    border-radius: 100px;
+    padding: 10px 15px;
+    width: 50%;
+    border: 1px solid #D9D9D9;
+    outline: none;
+    display: block;
+    margin: 20px auto 20px auto;
+}
+
+.login-form button {
+    border-radius: 100px;
+    border: none;
+    background: #50d8af;
+    width: 50%;
+    padding: 10px;
+    color: #FFFFFF;
+    margin-top: 25px;
+    box-shadow: 0 2px 10px -3px #0c2e8a;
+    display: block;
+    margin: 20px auto 10px auto;
+}
+
+.login-form a {
+    text-align: center;
+    margin-top: 30px;
+    color: #719BE6;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
