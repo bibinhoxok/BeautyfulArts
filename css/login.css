@@ -1,4 +1,4 @@
-.login-form img {
+.login-form img, .register-form img {
     display: block;
     width: 80px;
     margin: 30px auto;
@@ -6,7 +6,7 @@
     border-radius: 50%;
 }
 
-.login-form {
+.login-form, .register-form {
     display: none;
     z-index: 14;
     flex-direction: column;
@@ -23,7 +23,7 @@
     transform: translate(-50%, -50%)
 }
 
-.login-form .close-form {
+.login-form .close-form, .register-form .close-form {
     display: flex;
     position: absolute;
     z-index: 15;
@@ -41,37 +41,37 @@
     border-bottom-left-radius: 8px;
 }
 
-.login-form #logo {
+.login-form #logo, .register-form #logo {
     position: relative;
     text-align: center;
     margin: 15px;
 }
 
-.login-form #logo h1 {
+.login-form #logo h1, .register-form #logo h1 {
     font-size: 42px;
     margin: 0;
     padding: 0;
     line-height: 1;
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 700px;
 }
 
-.login-form #logo h1 a {
+.login-form #logo h1 a, .register-form #logo h1 a {
     color: #0c2e8a;
     line-height: 1;
     display: inline-block;
 }
 
-.login-form #logo h1 a span {
+.login-form #logo h1 a span, .register-form #logo h1 a span {
     color: #50d8af;
 }
 
-.login-form #logo img {
+.login-form #logo img, .register-form #logo img {
     padding: 0;
     margin: 0;
 }
 
-.login-form input {
+.login-form input, .register-form input {
     border-radius: 100px;
     padding: 10px 15px;
     width: 50%;
@@ -81,7 +81,11 @@
     margin: 20px auto 20px auto;
 }
 
-.login-form button {
+.login-form button, .register-form button {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
     border-radius: 100px;
     border: none;
     background: #50d8af;
@@ -94,7 +98,10 @@
     margin: 20px auto 10px auto;
 }
 
-.login-form a {
+.login-form a, .register-form a {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
     text-align: center;
     margin-top: 30px;
     color: #719BE6;

@@ -1,0 +1,73 @@
+/* Global */
+
+
+
+/* Container */
+.container-fluid {
+    background: #f2f5f8;
+    width: 50%;
+    padding: 20px 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1), 0 0 22px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+/* Thumbnail Box */
+.page-header {
+    margin-left: 50px;
+}
+.caption {
+    height: 220px;
+    margin: 0 25% 0 10%;
+    padding: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.caption.row-fluid {
+    margin-right: 10%;
+}
+
+.bannerImage a img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption .span4,
+.caption .span8 {
+    padding: 0px 20px;
+}
+
+.caption .span4 {
+    border-right: 1px dotted #CCCCCC;
+}
+
+.caption h3 {
+    color: #0c2e8a;
+    line-height: 2rem;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.caption p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #0c2e8a;
+}
+
+.carousel-control {
+    top: 33%;
+}
+
+.btn.btn-mini {
+    background: #0c2e8a;
+    border-radius: 0 0 0 0;
+    color: #f2f5f8;
+    font-size: 0.63rem;
+    text-shadow: none !important;
+}
