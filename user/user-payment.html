@@ -32,7 +32,7 @@
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/login.css" rel="stylesheet">
   <link href="../css/test.css" rel="stylesheet">
-  <link href="../css/user-detail.css" rel="stylesheet">
+  <link href="../css/payment.css" rel="stylesheet">
 </head>
 
 <body id="body">
@@ -112,136 +112,161 @@
             <a href="#">Username</a>
           </header>
           <ul class="nav">
-            <li class="sidebar-list-item active"><a href="#">Thông tin tài khoản</a></li>
+            <li><a href="#">Thông tin tài khoản</a></li>
             <li><a href="#">Khoá học của tôi</a></li>
             <li><a href="#">Chứng nhận của tôi</a></li>
-            <li><a href="#">Giỏ hàng</a></li>
+            <li class="sidebar-list-item active"><a href="#">Giỏ hàng</a></li>
             <li><a href="#">Lịch sử giao dịch</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-9 col-12">
-        <div>
-          <p class="title">
-            Thông tin tài khoản
-          </p>
-          <hr>
-          <div class="user-account-info-component">
-            <div class="section-title text-primary"><span>Thông tin chung</span>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-12">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Họ tên:</div>
-                  <div class="col-md-6 col-12">Dương Đặng Nam</div>
-                </div> <input id="fieldName" type="text" class="field-control form-control" style="display: none;">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Giới tính:</div>
-                  <div class="col-md-6 col-12"></div>
-                </div> <select class="field-control mb-1 custom-select" id="__BVID__445" style="display: none;">
-                  <option value="Nam">Nam</option>
-                  <option value="Nữ">Nữ</option>
-                </select>
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Số điện thoại:</div>
-                  <div class="col-md-6 col-12"></div>
-                </div> <input id="fieldPhone" type="text" class="field-control form-control" style="display: none;">
+        <div id="wrap">
+          <div id="grid">
+            <div class="column column2">
+              <div class="step" id="step4">
+                <div class="number">
+                  <span>1</span>
+                </div>
+                <div class="title">
+                  <h1>Thông tin thanh toán:</h1>
+                </div>
+                <div class="modify">
+                  <i class="fa fa-plus-circle"></i>
+                </div>
               </div>
-              <div class="col-md-6 col-12">
-                <p class="label">Địa chỉ:</p>
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 sub-label">Tỉnh/TP: </div>
-                  <div class="col-md-6 col-12"></div>
-                </div> <input id="fieldCity" type="text" class="field-control ml-2 form-control" style="display: none;">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 sub-label">Quận huyện:</div>
-                  <div class="col-md-6 col-12"></div>
-                </div> <input id="fieldDistrict" type="text" class="field-control ml-2 form-control"
-                  style="display: none;">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 sub-label">Số nhà:</div>
-                  <div class="col-md-6 col-12"></div>
-                </div> <input id="fieldStreet" type="text" class="field-control ml-2 form-control"
-                  style="display: none;">
-              </div>
-            </div>
-            <div class="mobile-button"><button class="btn-log-in">
-                Chỉnh sửa
-              </button></div>
-            <hr>
-            <div class="section-title text-primary"><span>Thông tin đăng nhập</span>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-12">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Username:</div>
-                  <div class="col-md-6 col-12">Username</div>
-                </div> <input id="fieldUsername" type="text" class="field-control form-control" style="display: none;">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Email:</div>
-                  <div class="col-md-6 col-12">example@fpt.edu.vn</div>
-                </div> <input id="fieldEmail" type="text" class="field-control form-control" style="display: none;">
-              </div>
-            </div>
-            <div class="mobile-button mt-2"><button class="btn-log-in">
-                Chỉnh sửa
-              </button></div>
-            <hr>
-            <div class="section-title text-primary">
-              Đổi mật khẩu
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 offset-md-3 col-12">
-                  <div class="form-container">
-                    <form class="form">
-                      <div id="oldPasswordFormGroup" role="group" class="form-group form-group"><label
-                          id="oldPasswordFormGroup__BV_label_" for="oldPasswordFormInput" class="d-block">Nhập mật khẩu
-                          cũ</label>
-                        <div>
-                          <div role="group" class="input-group"><!----><input id="oldPasswordFormInput"
-                              name="oldPassword" type="password" placeholder="Mật khẩu cũ" class="form-control"
-                              data-vv-as="Mật khẩu cũ" aria-required="true" aria-invalid="false">
-                            <div class="input-group-append"><span class="icon-showpass icon icon-eye-off"></span>
-                              <!----></div><!---->
-                          </div><!----><!----><!---->
+              <div class="content" id="payment">
+                <div class="left">
+                  <form class="go-right">
+                    <div>
+                      <input type="text" name="card_number" value="" id="card_number"
+                        placeholder="xxxx-xxxx-xxxx-xxxx" data-trigger="change"
+                        data-validation-minlength="1" data-type="name" data-required="true"
+                        data-error-message="Enter Your Credit Card Number" /><label for="card_number">Card
+                        Number</label>
+                    </div>
+                    <div>
+                      <div class="expiry">
+                        <div class="month_select">
+                          <select name="exp_month" value="" id="exp_month" placeholder=""
+                            data-trigger="change" data-type="name" data-required="true"
+                            data-error-message="Enter Your Credit Card Expiration Date">
+                            <option value="1">01 (Jan)</option>
+                            <option value="2">02 (Feb)</option>
+                            <option value="3">03 (Mar)</option>
+                            <option value="4">04 (Apr)</option>
+                            <option value="5">05 (May)</option>
+                            <option value="6">06 (Jun)</option>
+                            <option value="7">07 (Jul)</option>
+                            <option value="8">08 (Aug)</option>
+                            <option value="9">09 (Sep)</option>
+                            <option value="10">10 (Oct)</option>
+                            <option value="11">11 (Nov)</option>
+                            <option value="12">12 (Dec)</option>
+                          </select>
                         </div>
+                        <div class="year_select">
+                          <select name="exp_year" value="" id="exp_year" placeholder=""
+                            data-trigger="change" data-type="name" data-required="true"
+                            data-error-message="Enter Your Credit Card Expiration Date">
+                            <option value="1">14 </option>
+                            <option value="2">15 (Feb)</option>
+                            <option value="3">16 (Mar)</option>
+                            <option value="4">17 (Apr)</option>
+                            <option value="5">18 (May)</option>
+                            <option value="6">19 (Jun)</option>
+                            <option value="7">20 (Jul)</option>
+                            <option value="8">22 (Aug)</option>
+                            <option value="9">23 (Sep)</option>
+                            <option value="10">24 (Oct)</option>
+                            <option value="11">25 (Nov)</option>
+                            <option value="12">26 (Dec)</option>
+                          </select>
+                        </div>
+                        <label class="exp_date" for="Exp_Date">Exp Date</label>
                       </div>
-                      <p class="val-err-long"><span style="display: none;"></span>
-                      </p>
-                      <div id="passwordResetFormPassword1Group" role="group" class="form-group"><label
-                          id="passwordResetFormPassword1Group__BV_label_" for="passwordResetFormPassword1Input"
-                          class="d-block">Nhập mật khẩu mới</label>
-                        <div><input id="passwordResetFormPassword1Input" name="newPassword1" type="password"
-                            placeholder="Mật khẩu" class="form-control" data-vv-as="Mật khẩu" aria-required="true"
-                            aria-invalid="false"><!----><!----><!----></div>
+                    </div>
+                    <div class="sec_num">
+                      <div>
+                        <input type="text" name="ccv" value="" id="ccv" placeholder="123"
+                          data-trigger="change" data-validation-minlength="3" data-type="name"
+                          data-required="true" data-error-message="Enter Your Card Security Code" /><label
+                          for="ccv">Security Code</label>
                       </div>
-                      <p class="val-err-long"><span style="display: none;"></span>
-                        <!---->
-                      </p>
-                      <div id="passwordResetFormPassword2Group" role="group" class="form-group"><label
-                          id="passwordResetFormPassword2Group__BV_label_" for="passwordResetFormPassword2Input"
-                          class="d-block">Nhập lại mật khẩu mới</label>
-                        <div><input id="passwordResetFormPassword2Input" name="newPassword2" type="password"
-                            placeholder="Nhập lại mật khẩu mới" class="form-control"
-                            data-vv-as="Mật khẩu"><!----><!----><!----></div>
-                      </div>
-                      <p class="val-err"><!----></p>
-                      <div class="row justify-content-center"><button type="submit" disabled="disabled"
-                          class="btn-log-in">
-                          Đổi mật khẩu
-                          <span class="icon icon-right-open"></span></button></div>
-                    </form>
+                    </div>
+                  </form>
+                </div>
+                <div class="right">
+                  <div class="accepted">
+                    <span><img src="https://i.imgur.com/Z5HVIOt.png"></span>
+                    <span><img src="https://i.imgur.com/Le0Vvgx.png"></span>
+                    <span><img src="https://i.imgur.com/D2eQTim.png"></span>
+                    <span><img src="https://i.imgur.com/Pu4e7AT.png"></span>
+                    <span><img src="https://i.imgur.com/ewMjaHv.png"></span>
+                    <span><img src="https://i.imgur.com/3LmmFFV.png"></span>
+                  </div>
+                </div>
+                <a class="continue" href="#">Tiếp tục</a>
+              </div>
+            </div>
+            <div class="column column3">
+              <div class="step" id="step5">
+                <div class="number">
+                  <span>2</span>
+                </div>
+                <div class="title">
+                  <h1>Xác nhận đơn hàng:</h1>
+                </div>
+                <div class="modify">
+                  <i class="fa fa-plus-circle"></i>
+                </div>
+              </div>
+              <div class="content" id="final_products">
+                <div class="left" id="ordered">
+                  <div class="products">
+                    <div class="product_image">
+                      <img src="../img/detail_xuanlan.jpg" />
+                    </div>
+                    <div class="product_details">
+                      <span class="product_name">SKETCHNOTE CÙNG HỌA SỸ XUÂN LAN 2023</span>
+                      <span class="quantity">1</span>
+                      <span class="price">199.000 VNĐ</span>
+                    </div>
+                  </div>
+                  <div class="final">
+                    <span class="title">Tổng cộng <span id="calculated_total">199.000 VNĐ</span></span>
+                  </div>
+                </div>
+                <div class="right" id="reviewed">
+                  <div class="billing">
+                    <span class="title">thông tin thanh toán:</span>
+                    <div class="address_reviewed">
+                      <span class="name">Username</span>
+                      <span class="address">123 Main Street</span>
+                      <span class="location">Everytown, USA, 12345</span>
+                      <span class="phone">(123)867-5309</span>
+                    </div>
+                  </div>
+                  <div class="payment">
+                    <span class="title">phương thức thanh toán:</span>
+                    <div class="payment_reviewed">
+                      <span class="method">Visa</span>
+                      <span class="number_hidden">xxxx-xxxx-xxxx-1111</span>
+                    </div>
+                  </div>
+                  <div id="complete">
+                    <a class="big_button" id="complete" href="#">Thanh toán</a>
+                    <span class="sub">By selecting this button you agree to the purchase and subsequent
+                      payment for this order.</span>
                   </div>
                 </div>
               </div>
-            </div> <!---->
-          </div> <!---->
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div style="height: 30vh;"></div>
   <!--==========================
     Footer
   ============================-->
