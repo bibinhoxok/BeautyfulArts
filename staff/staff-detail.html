@@ -30,6 +30,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/login.css" rel="stylesheet">
   <link href="../css/test.css" rel="stylesheet">
   <link href="../css/user-detail.css" rel="stylesheet">
   <link href="../css/info-form.css" rel="stylesheet">
@@ -101,7 +102,7 @@
 
 
   <!-- table element -->
-  <div style="display: block; height: 200%;">
+  <div style="display: block; height: auto;">
     <div class="app-container">
       <div class="col-12 col-md-3">
         <div class="image">
@@ -112,9 +113,8 @@
             <a href="#">Username</a>
           </header>
           <ul class="nav">
-            <li class="sidebar-list-item active"><a href="#">Thông tin tài khoản</a></li>
-            <li><a href="#">quản lí khóa học</a></li>
-            <li><a href="#">đăng khóa học</a></li>
+            <li><a href="#">Thông tin tài khoản</a></li>
+            <li class="sidebar-list-item active"><a href="#">Quản lí tài khoản</a></li>
           </ul>
         </div>
       </div>
@@ -132,102 +132,114 @@
                 <div class="row no-gutters mb-1">
                   <div class="col-md-4 col-12 label">Họ tên:</div>
                   <div class="col-md-6 col-12">Dương Đặng Nam</div>
-                </div>
+                </div> <input id="fieldName" type="text" class="field-control form-control" style="display: none;">
                 <div class="row no-gutters mb-1">
                   <div class="col-md-4 col-12 label">Giới tính:</div>
-                  <div class="col-md-6 col-12">Nam</div>
-                </div>
+                  <div class="col-md-6 col-12"></div>
+                </div> <select class="field-control mb-1 custom-select" id="__BVID__445" style="display: none;">
+                  <option value="Nam">Nam</option>
+                  <option value="Nữ">Nữ</option>
+                </select>
                 <div class="row no-gutters mb-1">
                   <div class="col-md-4 col-12 label">Số điện thoại:</div>
-                  <div class="col-md-6 col-12">0888 888 888</div>
-                </div>
+                  <div class="col-md-6 col-12"></div>
+                </div> <input id="fieldPhone" type="text" class="field-control form-control" style="display: none;">
+              </div>
+              <div class="col-md-6 col-12">
+                <p class="label">Địa chỉ:</p>
                 <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Địa chỉ:</div>
-                  <div class="col-md-6 col-12">abcxyz</div>
-                </div>
+                  <div class="col-md-4 col-12 sub-label">Tỉnh/TP: </div>
+                  <div class="col-md-6 col-12"></div>
+                </div> <input id="fieldCity" type="text" class="field-control ml-2 form-control" style="display: none;">
+                <div class="row no-gutters mb-1">
+                  <div class="col-md-4 col-12 sub-label">Quận huyện:</div>
+                  <div class="col-md-6 col-12"></div>
+                </div> <input id="fieldDistrict" type="text" class="field-control ml-2 form-control"
+                  style="display: none;">
+                <div class="row no-gutters mb-1">
+                  <div class="col-md-4 col-12 sub-label">Số nhà:</div>
+                  <div class="col-md-6 col-12"></div>
+                </div> <input id="fieldStreet" type="text" class="field-control ml-2 form-control"
+                  style="display: none;">
               </div>
             </div>
-          </div>
-          <div class="mobile-button"><button class="info">
-              Chỉnh sửa
-            </button></div>
-          <hr>
-          <div class="section-title text-primary"><span>Thông tin đăng nhập</span>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-12">
-              <div class="row no-gutters mb-1">
-                <div class="col-md-4 col-12 label">Username:</div>
-                <div class="col-md-6 col-12">Username</div>
-              </div>
-              <div class="row no-gutters mb-1">
-                <div class="col-md-4 col-12 label">Email:</div>
-                <div class="col-md-6 col-12">example@fpt.edu.vn</div>
-              </div>
+            <div class="mobile-button"><button class="info">
+                Chỉnh sửa
+              </button></div>
+            <hr>
+            <div class="section-title text-primary"><span>Thông tin đăng nhập</span>
             </div>
-          </div>
-          <hr>
-          <div class="section-title text-primary">
-            Đổi mật khẩu
-          </div>
-          <div class="container">
             <div class="row">
-              <div class="col-md-6 offset-md-3 col-12">
-                <div class="form-container">
-                  <form class="form">
-                    <div>
-                      <label>Nhập mật khẩu cũ</label>
-                      <div>
-                        <div role="group" class="input-group"><input id="oldPasswordFormInput" name="oldPassword"
-                            type="password" placeholder="Mật khẩu cũ" class="form-control">
+              <div class="col-md-6 col-12">
+                <div class="row no-gutters mb-1">
+                  <div class="col-md-4 col-12 label">Username:</div>
+                  <div class="col-md-6 col-12">Username</div>
+                </div> <input id="fieldUsername" type="text" class="field-control form-control" style="display: none;">
+                <div class="row no-gutters mb-1">
+                  <div class="col-md-4 col-12 label">Email:</div>
+                  <div class="col-md-6 col-12">example@fpt.edu.vn</div>
+                </div> <input id="fieldEmail" type="text" class="field-control form-control" style="display: none;">
+              </div>
+            </div>
+            <div class="mobile-button mt-2"><button class="info">
+                Chỉnh sửa
+              </button></div>
+            <hr>
+            <div class="section-title text-primary">
+              Đổi mật khẩu
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 offset-md-3 col-12">
+                  <div class="form-container">
+                    <form class="form">
+                      <div id="oldPasswordFormGroup" role="group" class="form-group form-group"><label
+                          id="oldPasswordFormGroup__BV_label_" for="oldPasswordFormInput" class="d-block">Nhập mật khẩu
+                          cũ</label>
+                        <div>
+                          <div role="group" class="input-group"><!----><input id="oldPasswordFormInput"
+                              name="oldPassword" type="password" placeholder="Mật khẩu cũ" class="form-control"
+                              data-vv-as="Mật khẩu cũ" aria-required="true" aria-invalid="false">
+                            <div class="input-group-append"><span class="icon-showpass icon icon-eye-off"></span>
+                              <!----></div><!---->
+                          </div><!----><!----><!---->
                         </div>
                       </div>
-                    </div>
-                    <p class="val-err-long"><span style="display: none;"></span>
-                    </p>
-                    <div><label>Nhập mật khẩu mới</label>
-                      <div><input id="passwordResetFormPassword1Input" name="newPassword1" type="password"
-                          placeholder="Mật khẩu"></div>
-                    </div>
-                    <p class="val-err-long"><span style="display: none;"></span>
-                    </p>
-                    <div><label>Nhập lại mật khẩu mới</label>
-                      <div><input id="passwordResetFormPassword2Input" name="newPassword2" type="password"
-                          placeholder="Nhập lại mật khẩu mới"></div>
-                    </div>
-                    <p class="val-err"></p>
-                    <div class="row justify-content-center"><button type="submit" disabled="disabled" class="info">
-                        Đổi mật khẩu
-                        <span class="icon icon-right-open"></span></button></div>
-                  </form>
+                      <p class="val-err-long"><span style="display: none;"></span>
+                      </p>
+                      <div id="passwordResetFormPassword1Group" role="group" class="form-group"><label
+                          id="passwordResetFormPassword1Group__BV_label_" for="passwordResetFormPassword1Input"
+                          class="d-block">Nhập mật khẩu mới</label>
+                        <div><input id="passwordResetFormPassword1Input" name="newPassword1" type="password"
+                            placeholder="Mật khẩu" class="form-control" data-vv-as="Mật khẩu" aria-required="true"
+                            aria-invalid="false"><!----><!----><!----></div>
+                      </div>
+                      <p class="val-err-long"><span style="display: none;"></span>
+                        <!---->
+                      </p>
+                      <div id="passwordResetFormPassword2Group" role="group" class="form-group"><label
+                          id="passwordResetFormPassword2Group__BV_label_" for="passwordResetFormPassword2Input"
+                          class="d-block">Nhập lại mật khẩu mới</label>
+                        <div><input id="passwordResetFormPassword2Input" name="newPassword2" type="password"
+                            placeholder="Nhập lại mật khẩu mới" class="form-control"
+                            data-vv-as="Mật khẩu"><!----><!----><!----></div>
+                      </div>
+                      <p class="val-err"><!----></p>
+                      <div class="row justify-content-center"><button type="submit" disabled="disabled"
+                          class="info">
+                          Đổi mật khẩu
+                          <span class="icon icon-right-open"></span></button></div>
+                    </form>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> <!---->
+          </div> <!---->
         </div>
       </div>
     </div>
   </div>
-  </div>
   <div style="height: 30vh;"></div>
-  <!--Info form -->
-  <div class="info-form">
-    <a href="#" class="close-form">x</a>
-    <div id="logo">
-      <h1><a href="#body" class="scrollto">Beautyful <span>Arts</span></a></h1>
-    </div>
-    <input type="text" name="name" placeholder="Họ tên:" />
-    <div class="sex-option">
-      <p>
-        <label for="male">Nam</label><input type="radio" id="male" name="sex" value="">
-        <label for="female">Nữ</label><input type="radio" id="female" name="sex" value="">
-      </p>
-    </div>
-    <input type="text" name="email" placeholder="0888 888 888" />
-    <input type="text" name="email" placeholder="abcxyz" />
-    <button type="submit">hoàn tất</button>
-
-  </div><!-- Info form -->
   <!--==========================
     Footer
   ============================-->
@@ -290,7 +302,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="../js/main.js"></script>
-  <script src="../js/show-info-form.js"></script>
+  <script src="../js/show-login.js"></script>
 
 </body>
 

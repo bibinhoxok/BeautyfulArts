@@ -6,3 +6,10 @@
     font-size: xx-large;
     margin: 5px;
 }
+
+div .image:hover {
+    opacity: 0.5;
+    content: "upload image here";
+    justify-content: center;
+    color: #000;
+}

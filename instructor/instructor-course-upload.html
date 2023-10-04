@@ -112,102 +112,97 @@
             <a href="#">Username</a>
           </header>
           <ul class="nav">
-            <li class="sidebar-list-item active"><a href="#">Thông tin tài khoản</a></li>
-            <li><a href="#">quản lí khóa học</a></li>
-            <li><a href="#">đăng khóa học</a></li>
+            <li><a href="#">Thông tin tài khoản</a></li>
+            <li><a href="#">Quản lí khóa học</a></li>
+            <li class="sidebar-list-item active"><a href="#">Tạo khóa học</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-9 col-12">
         <div>
           <p class="title">
-            Thông tin tài khoản
+            Tạo khóa học
           </p>
           <hr>
           <div class="user-account-info-component">
             <div class="section-title text-primary"><span>Thông tin chung</span>
             </div>
             <div class="row">
-              <div class="col-md-6 col-12">
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Họ tên:</div>
-                  <div class="col-md-6 col-12">Dương Đặng Nam</div>
-                </div>
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Giới tính:</div>
-                  <div class="col-md-6 col-12">Nam</div>
-                </div>
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Số điện thoại:</div>
-                  <div class="col-md-6 col-12">0888 888 888</div>
-                </div>
-                <div class="row no-gutters mb-1">
-                  <div class="col-md-4 col-12 label">Địa chỉ:</div>
-                  <div class="col-md-6 col-12">abcxyz</div>
-                </div>
-              </div>
+              <form class="course-create" style="width: 100%;">
+                <div class="col-md-6 col-12">
+                  <div class="row no-gutters mb-1">
+                    <div class="col-md-4 col-12 label">Tiêu đề:</div>
+                    <div class="col-md-6 col-12"><input type="text" class="title-course form-control"
+                        placeholder="SKETCHNOTE CÙNG HỌA SỸ XUÂN LAN 2023"></div>
+                  </div>
+                  <div class="row no-gutters mb-1">
+                    <div class="col-md-4 col-12 label">Loại:</div>
+                    <div class="col-md-6 col-12"><input type="text" class="title-course form-control"
+                        placeholder="vẽ cơ bản"></div>
+                  </div>
+                  <div class="row no-gutters mb-1">
+                    <div class="col-md-4 col-12 label">Mô tả:</div>
+                    <div class="col-md-6 col-12"><input type="text" class="description-couse form-control"
+                        placeholder="" height="100px"></div>
+                  </div>
+                  <div class="row no-gutters mb-1">
+                    <div class="col-md-4 col-12 label">Giá:</div>
+                    <div class="col-md-6 col-12"><input type="number" class="price form-control" placeholder="500000">
+                    </div>
+                  </div>
+              </form>
             </div>
           </div>
-          <div class="mobile-button"><button class="info">
-              Chỉnh sửa
-            </button></div>
           <hr>
-          <div class="section-title text-primary"><span>Thông tin đăng nhập</span>
+          <div class="section-title text-primary"><span>Thêm bài học</span>
           </div>
           <div class="row">
             <div class="col-md-6 col-12">
               <div class="row no-gutters mb-1">
-                <div class="col-md-4 col-12 label">Username:</div>
-                <div class="col-md-6 col-12">Username</div>
+                <div class="col-md-4 col-12 label">Tiêu đề:</div>
+                <div class="col-md-6 col-12"><input type="text" class="title-course form-control"
+                    placeholder="Bài 1: Khoá học quà tặng - Vẽ chú cún con"></div>
               </div>
               <div class="row no-gutters mb-1">
-                <div class="col-md-4 col-12 label">Email:</div>
-                <div class="col-md-6 col-12">example@fpt.edu.vn</div>
+                <div class="col-md-4 col-12 label">Mô tả:</div>
+                <div class="col-md-6 col-12"><input type="text" class="description-couse form-control" placeholder=""
+                    height="100px"></div>
               </div>
+              <button type="submit" disabled="disabled" class="info">Upload video</button>
+              <p>bài-1.mp4</p>
             </div>
           </div>
           <hr>
-          <div class="section-title text-primary">
-            Đổi mật khẩu
+          <div class="section-title text-primary"><span>Thêm bài học</span>
           </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 offset-md-3 col-12">
-                <div class="form-container">
-                  <form class="form">
-                    <div>
-                      <label>Nhập mật khẩu cũ</label>
-                      <div>
-                        <div role="group" class="input-group"><input id="oldPasswordFormInput" name="oldPassword"
-                            type="password" placeholder="Mật khẩu cũ" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <p class="val-err-long"><span style="display: none;"></span>
-                    </p>
-                    <div><label>Nhập mật khẩu mới</label>
-                      <div><input id="passwordResetFormPassword1Input" name="newPassword1" type="password"
-                          placeholder="Mật khẩu"></div>
-                    </div>
-                    <p class="val-err-long"><span style="display: none;"></span>
-                    </p>
-                    <div><label>Nhập lại mật khẩu mới</label>
-                      <div><input id="passwordResetFormPassword2Input" name="newPassword2" type="password"
-                          placeholder="Nhập lại mật khẩu mới"></div>
-                    </div>
-                    <p class="val-err"></p>
-                    <div class="row justify-content-center"><button type="submit" disabled="disabled" class="info">
-                        Đổi mật khẩu
-                        <span class="icon icon-right-open"></span></button></div>
-                  </form>
-                </div>
+          <div class="row">
+            <div class="col-md-6 col-12">
+              <div class="row no-gutters mb-1">
+                <div class="col-md-4 col-12 label">Tiêu đề:</div>
+                <div class="col-md-6 col-12"><input type="text" class="title-course form-control"
+                    placeholder="Bài 1: Khoá học quà tặng - Vẽ chú cún con"></div>
               </div>
+              <div class="row no-gutters mb-1">
+                <div class="col-md-4 col-12 label">Mô tả:</div>
+                <div class="col-md-6 col-12"><input type="text" class="description-couse form-control" placeholder=""
+                    height="100px"></div>
+              </div>
+              <button type="submit" disabled="disabled" class="info">Upload video</button>
+            </div>
+          </div>
+          <hr>
+          <div class="container">
+            <div><button type="submit" disabled="disabled" class="info">Thêm bài học</button>
+            </div>
+          </div>
+          <hr>
+          <div class="container">
+            <div><button style="margin-left: auto;margin-right: auto; display: flex;" type="submit" disabled="disabled" class="info">Tạo khóa học</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
   <div style="height: 30vh;"></div>
   <!--Info form -->

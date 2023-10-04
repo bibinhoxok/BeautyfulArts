@@ -1,15 +1,18 @@
-.feedback {
-    color: #0c2e8a;
-}
-.feedback-form img {
-    display: block;
-    width: 80px;
-    margin: 30px auto;
-    box-shadow: 0 5px 10px -7px #333333;
-    border-radius: 50%;
-}
 
-.feedback-form{
+.info {
+    color: #fff;
+  }
+  .info  {
+    background: #0c2e8a;
+    border: 2px solid #0c2e8a;
+  }
+  
+  .info:hover {
+    background: none;
+    color: #0c2e8a;
+  }
+
+.info-form{
     display: none;
     z-index: 14;
     flex-direction: column;
@@ -26,7 +29,7 @@
     transform: translate(-50%, -50%)
 }
 
-.feedback-form .close-form{
+.info-form .close-form{
     display: flex;
     position: absolute;
     z-index: 15;
@@ -44,13 +47,13 @@
     border-bottom-left-radius: 8px;
 }
 
-.feedback-form #logo{
+.info-form #logo{
     position: relative;
     text-align: center;
     margin: 15px;
 }
 
-.feedback-form #logo h1{
+.info-form #logo h1{
     font-size: 42px;
     margin: 0;
     padding: 0;
@@ -59,22 +62,22 @@
     font-weight: 700px;
 }
 
-.feedback-form #logo h1 a{
+.info-form #logo h1 a{
     color: #0c2e8a;
     line-height: 1;
     display: inline-block;
 }
 
-.feedback-form #logo h1 a span{
+.info-form #logo h1 a span{
     color: #50d8af;
 }
 
-.feedback-form #logo img{
+.info-form #logo img{
     padding: 0;
     margin: 0;
 }
 
-.feedback-form input{
+.info-form input{
     border-radius: 100px;
     padding: 10px 15px;
     width: 75%;
@@ -84,13 +87,13 @@
     margin: 20px auto 20px auto;
 }
 
-.feedback-form .content{
+.info-form .content{
     height: 220px;
     border-radius: 10px;
     
 }
 
-.feedback-form button {
+.info-form button {
     font-family: "Raleway", sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -107,7 +110,7 @@
     margin: 20px auto 10px auto;
 }
 
-.feedback-form a{
+.info-form a{
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
@@ -116,5 +119,21 @@
     color: #719BE6;
     text-decoration: none;
     padding: 5px;
+    display: block;
+}
+
+.info-form p, .info-form p input{
+    width: auto;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    padding: 5px;
+}
+
+.sex-option {
+    margin: 10px auto 10px 15%;
     display: block;
 }
