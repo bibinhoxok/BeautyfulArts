@@ -1,0 +1,38 @@
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+
+function Register() {
+  const history = useHistory();
+
+  const handleRegister = () => {
+    // Simulate a successful registration
+    // You can add your registration logic here
+
+    // Redirect to the home page (Header) after a successful registration
+    history.push('/');
+  };
+
+  return (
+    <div className="register-form">
+      <Link to="#" className="close-form">
+        x
+      </Link>
+      <div id="logo">
+        <h1>
+          <Link to="#body" className="scrollto">
+            Beautyful <span>Arts</span>
+          </Link>
+        </h1>
+      </div>
+      <input type="text" name="name" placeholder="Họ và tên" />
+      <input type="email" name="email" placeholder="Email" />
+      <input type="password" name="password" placeholder="Mật khẩu" />
+      <input type="password" name="password-confirm" placeholder="Xác nhận mật khẩu" />
+      <button type="submit" onClick={handleRegister}>
+        Đăng ký
+      </button>
+    </div>
+  );
+}
+
+export default Register;

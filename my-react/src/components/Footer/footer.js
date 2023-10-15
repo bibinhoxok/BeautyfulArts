@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return <footer className="main-footer">
@@ -14,44 +15,44 @@ function Footer() {
     <div className="col-12 col-lg-4">
       <p className="item-title">Về Beautyful Arts:</p>
       <div className="item-list">
-        <a href="/aboutUs" className="">
+        <Link to="/aboutUs" className="">
           <p className="item">Giới thiệu - Liên hệ</p>
-        </a>{" "}
-        <a href="/policy" className="">
+        </Link>
+        <Link to="/policy" className="">
           <p className="item">Chính sách bảo mật</p>
-        </a>{" "}
-        <a href="/payment" className="">
+        </Link> 
+        <Link to="/payment" className="">
           <p className="item">Hướng dẫn thanh toán</p>
-        </a>{" "}
-        <a href="/service" className="">
+        </Link> 
+        <Link to="/service" className="">
           <p className="item">Chính sách dịch vụ</p>
-        </a>
+        </Link>
       </div>
     </div>
     <div className="col-12 col-lg-3 share-container">
       <p>
         Chia sẻ: <br />
-        <a href="">
+        <Link to="">
           <i className="fa fa-twitter" />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <i className="fa fa-facebook" />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <i className="fa fa-google-plus" />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <i className="fa fa-linkedin" />
-        </a>
+        </Link>
       </p>
       <p>
         Theo dõi chúng tôi: <br />
-        <a href="">
+        <Link to="">
           <i className="fa fa-brands fa-facebook" />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <i className="fa fa-brands fa-youtube" />
-        </a>
+        </Link>
       </p>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Banner() {
     return <div className="banner">
@@ -12,12 +13,12 @@ function Banner() {
         trẻ thơ!
       </h2>
       <div>
-        <a href="#" className="btn-sign-up">
+        <Link to="#" className="btn-sign-up">
           Đăng kí
-        </a>
-        <a href="#" className="btn-log-in">
+        </Link>
+        <Link to="#" className="btn-log-in">
           Đăng nhập
-        </a>
+        </Link>
       </div>
     </div>
     <div id="intro-carousel" className="owl-carousel">
@@ -51,7 +52,7 @@ function Banner() {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 about-img">
-            <img src="img/top_APHAN.jpg" alt="" />
+            <img src="assets/img/top_APHAN.jpg" alt="" />
           </div>
           <div className="col-lg-6 content">
             <h2>
@@ -88,7 +89,7 @@ function Banner() {
               <i className="fa fa-eye" />
             </div>
             <h4 className="title">
-              <a href="">Quan sát</a>
+              <Link to="#">Quan sát</Link>
             </h4>
             <p className="description">
               Vẽ giúp bé cải thiện trí nhớ, và ngạc nhiên hơn là vẽ giúp bé biết
@@ -102,7 +103,7 @@ function Banner() {
               <i className="fa fa-picture-o" />
             </div>
             <h4 className="title">
-              <a href="">Sáng tạo</a>
+              <Link to="#">Sáng tạo</Link>
             </h4>
             <p className="description">
               Vẽ giúp bé nâng cao khả năng tưởng tượng - tăng cường tính sáng
@@ -116,7 +117,7 @@ function Banner() {
               <i className="fa fa-user" />
             </div>
             <h4 className="title">
-              <a href="">Diễn đạt</a>
+              <Link to="#">Diễn đạt</Link>
             </h4>
             <p className="description">
               Bé sẽ thoải mãi thể hiện, bộc bạch những suy nghĩ, cảm xúc của
@@ -131,7 +132,7 @@ function Banner() {
               <i className="fa fa-map" />
             </div>
             <h4 className="title">
-              <a href="">Cover</a>
+              <Link to="#">Cover</Link>
             </h4>
             <p className="description">
               Khoá học cũng sẽ giúp bé thoả thích cover lại các nhân vật và tuỳ
@@ -155,8 +156,8 @@ function Banner() {
       <div className="row no-gutters">
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-1_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-1_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -168,13 +169,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 1</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -186,13 +187,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 2</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-3_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-3_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -204,13 +205,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 3</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-4_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-4_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -222,13 +223,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 4</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-5_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-5_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -240,13 +241,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 5</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-6_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-6_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -258,13 +259,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 6</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-7_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-7_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -276,13 +277,13 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 7</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
-            <a
-              href="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
+            <Link
+              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
@@ -294,7 +295,7 @@ function Banner() {
                   <h2 className="wow fadeInUp">Tác phẩm 8</h2>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -309,19 +310,19 @@ function Banner() {
       </div>
       <div className="owl-carousel testimonials-carousel">
         <div className="testimonial-item">
-          <img src="img/img/1.jpg" />
+          <img src="img/img/1.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/2.jpg" />
+          <img src="img/img/2.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/3.jpg" />
+          <img src="img/img/3.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/4.jpg" />
+          <img src="img/img/4.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/2.jpg" />
+          <img src="img/img/2.jpg" alt=""/>
         </div>
       </div>
     </div>
@@ -343,9 +344,9 @@ function Banner() {
           </p>
         </div>
         <div className="col-lg-3 cta-btn-container text-center">
-          <a className="cta-btn align-middle" href="#">
+          <Link className="cta-btn align-middle" to="#">
             Tham gia ngay
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -367,18 +368,18 @@ function Banner() {
               <h4>Walter White</h4>
               <span>artist</span>
               <div className="social">
-                <a href="">
+                <Link to="#">
                   <i className="fa fa-twitter" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-facebook" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-google-plus" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-linkedin" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -392,18 +393,18 @@ function Banner() {
               <h4>Sarah Jhinson</h4>
               <span>artist</span>
               <div className="social">
-                <a href="">
+                <Link to="#">
                   <i className="fa fa-twitter" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-facebook" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-google-plus" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-linkedin" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -417,18 +418,18 @@ function Banner() {
               <h4>William Anderson</h4>
               <span>artist</span>
               <div className="social">
-                <a href="">
+                <Link to="#">
                   <i className="fa fa-twitter" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-facebook" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-google-plus" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-linkedin" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -442,18 +443,18 @@ function Banner() {
               <h4>Amanda Jepson</h4>
               <span>artist</span>
               <div className="social">
-                <a href="">
+                <Link to="#">
                   <i className="fa fa-twitter" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-facebook" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-google-plus" />
-                </a>
-                <a href="">
+                </Link>
+                <Link to="#">
                   <i className="fa fa-linkedin" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
