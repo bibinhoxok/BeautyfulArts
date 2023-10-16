@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const history = useHistory();
 
   const handleLogin = () => {
     // Simulate a successful login
     setLoggedIn(true);
 
-    // Redirect to the home page (Header) after a successful login
-    history.push('/');
+    // Redirect to another page after a successful login
+    window.location.href = '/baner'; // You can replace '/' with the desired URL
   };
 
   return (

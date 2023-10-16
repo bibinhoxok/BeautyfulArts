@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Register() {
-  const history = useHistory();
 
   const handleRegister = () => {
     // Simulate a successful registration
     // You can add your registration logic here
 
-    // Redirect to the home page (Header) after a successful registration
-    history.push('/');
+    // Redirect to another page after a successful login
+    window.location.href = '/baner'; // You can replace '/' with the desired URL
   };
 
   return (
