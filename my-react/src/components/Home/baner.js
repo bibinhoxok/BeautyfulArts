@@ -12,35 +12,35 @@ function Banner() {
         <br />
         trẻ thơ!
       </h2>
-      <div>
+      {/* <div>
         <Link to="#" className="btn-sign-up">
           Đăng kí
         </Link>
         <Link to="#" className="btn-log-in">
           Đăng nhập
         </Link>
-      </div>
+      </div> */}
     </div>
     <div id="intro-carousel" className="owl-carousel">
       <div
         className="item"
-        style={{ backgroundImage: 'url("img/intro-carousel/1.jpg")' }}
+        style={{ backgroundImage: 'url("assets/img/intro-carousel/1.jpg")' }}
       />
       <div
         className="item"
-        style={{ backgroundImage: 'url("img/intro-carousel/2.jpg")' }}
+        style={{ backgroundImage: 'url("assets/img/intro-carousel/2.jpg")' }}
       />
       <div
         className="item"
-        style={{ backgroundImage: 'url("img/intro-carousel/3.jpg")' }}
+        style={{ backgroundImage: 'url("assets/img/intro-carousel/3.jpg")' }}
       />
       <div
         className="item"
-        style={{ backgroundImage: 'url("img/intro-carousel/4.jpg")' }}
+        style={{ backgroundImage: 'url("assets/img/intro-carousel/4.jpg")' }}
       />
       <div
         className="item"
-        style={{ backgroundImage: 'url("img/intro-carousel/5.jpg")' }}
+        style={{ backgroundImage: 'url("assets/img/intro-carousel/5.jpg")' }}
       />
     </div>
   </section>
@@ -157,11 +157,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-1_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-1_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-1_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-1_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -175,11 +175,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -193,11 +193,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-3_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-3_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-3_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-3_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -211,11 +211,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-4_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-4_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-4_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-4_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -229,11 +229,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-5_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-5_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-5_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-5_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -247,11 +247,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-6_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-6_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-6_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-6_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -265,11 +265,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-7_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-7_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-7_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-7_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -283,11 +283,11 @@ function Banner() {
         <div className="col-lg-3 col-md-4">
           <div className="portfolio-item wow fadeInUp">
             <Link
-              to="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
+              to="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
               className="portfolio-popup"
             >
               <img
-                src="img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
+                src="assets/img/portfolio/UploadImages_haiphong_thnguyenhue_2021_12_nam+21_22_ve_tranh_tranh-2_1412202115.jpg"
                 alt=""
               />
               <div className="portfolio-overlay">
@@ -310,19 +310,19 @@ function Banner() {
       </div>
       <div className="owl-carousel testimonials-carousel">
         <div className="testimonial-item">
-          <img src="img/img/1.jpg" alt=""/>
+          <img src="assets/img/img/1.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/2.jpg" alt=""/>
+          <img src="assets/img/img/2.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/3.jpg" alt=""/>
+          <img src="assets/img/img/3.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/4.jpg" alt=""/>
+          <img src="assets/img/img/4.jpg" alt=""/>
         </div>
         <div className="testimonial-item">
-          <img src="img/img/2.jpg" alt=""/>
+          <img src="assets/img/img/2.jpg" alt=""/>
         </div>
       </div>
     </div>
@@ -362,7 +362,7 @@ function Banner() {
         <div className="col-lg-3 col-md-6">
           <div className="member">
             <div className="pic">
-              <img src="img/team-1.jpg" alt="" />
+              <img src="assets/img/team-1.jpg" alt="" />
             </div>
             <div className="details">
               <h4>Walter White</h4>
@@ -387,7 +387,7 @@ function Banner() {
         <div className="col-lg-3 col-md-6">
           <div className="member">
             <div className="pic">
-              <img src="img/team-2.jpg" alt="" />
+              <img src="assets/img/team-2.jpg" alt="" />
             </div>
             <div className="details">
               <h4>Sarah Jhinson</h4>
@@ -412,7 +412,7 @@ function Banner() {
         <div className="col-lg-3 col-md-6">
           <div className="member">
             <div className="pic">
-              <img src="img/team-3.jpg" alt="" />
+              <img src="assets/img/team-3.jpg" alt="" />
             </div>
             <div className="details">
               <h4>William Anderson</h4>
@@ -437,7 +437,7 @@ function Banner() {
         <div className="col-lg-3 col-md-6">
           <div className="member">
             <div className="pic">
-              <img src="img/team-4.jpg" alt="" />
+              <img src="assets/img/team-4.jpg" alt="" />
             </div>
             <div className="details">
               <h4>Amanda Jepson</h4>
