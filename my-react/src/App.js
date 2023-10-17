@@ -10,6 +10,7 @@ import Login from './components/Login/login';
 import Register from './components/Register/register';
 import CourseList from './components/Course/courseList';
 import CourseDetail from './components/Course/courseDetail';
+import CreateCourse from './components/Course/createCourse';
 
 function App() {
   return (
@@ -17,10 +18,12 @@ function App() {
       <Header/>
       <Routes>
       <Route path="/" element={<Home />} />
+      {/* <Route path="/" element={</>} /> */}
       <Route path='/login' element={Login} />
       <Route path='/register' element={Register} />
       <Route path='/courseList' element={<CourseList/>} />
       <Route path='/courseDetail' element={<CourseDetail/>} />
+      <Route path="/createCourse" element={<CreateCourse/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Login from '../Login/login';
+import Register from '../Register/register';
+import { Routes, Route } from 'react-router-dom';
 
 function Header() {
   // Define loggedIn, username, and handleLogout based on your application's logic.
@@ -50,7 +53,8 @@ function Header() {
   };
 
   return (
-    <header className="main-header">
+
+    <><header className="main-header" id="header">
       <div className="container">
         <div id="logo" className="pull-left">
           <h1>
@@ -62,14 +66,13 @@ function Header() {
 
         {/* Search  */}
         <div className="nav-menu-search">
-          <div id="input-group search-input-group" className="menu-search">
+          <div className="input-group search-input-group" id="menu-search">
             <input
               type="text"
               placeholder="Tên khoá học, chủ đề, tác giả"
               className="search-input form-control"
               value={searchQuery}
-              onChange={handleSearchInputChange}
-            />
+              onChange={handleSearchInputChange} />
             <button type="button" className="search-button">
               <i className="fa fa-search"></i>
               <i className="fa-solid fa-magnifying-glass"></i>
@@ -79,10 +82,10 @@ function Header() {
         {/* end search  */}
 
         {/* Menu  */}
-        <nav className="nav-menu-container">
+        <nav id="nav-menu-container">
           <ul className="nav-menu">
 
-          {/* Course */}
+            {/* Course */}
             <li className="menu-has-children">
               <Link to="#">Khóa học</Link>
               <ul>
@@ -111,42 +114,38 @@ function Header() {
 
             {/* Un,Lin,Rter */}
             {loggedIn ? (
-              <div>
-                <li className="menu-has-children">
-                  <Link to="#" className="btn-sign-in">
-                    {username}
-                  </Link>
-                  <ul>
-                    <li>
-                      <Link to="#">Khoá học của tôi</Link>
-                    </li>
-                    <li>
-                      <Link to="#">Chứng nhận của tôi</Link>
-                    </li>
-                    <li>
-                      <Link to="#">Giỏ hàng</Link>
-                    </li>
-                    <li>
-                      <Link to="#" onClick={handleLogout}>
-                        Đăng xuất
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </div>
-            ) : (
-              <div>
-                <li>
-                  <Link to="/Register" className="btn-sign-up">
-                    Đăng kí
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/Login" className="btn-log-in">
+              <><li>
+                <Link to="#" className="btn-sign-up">
+                  Đăng kí
+                </Link>
+              </li><li>
+                  <Link to="#" className="btn-log-in">
                     Đăng nhập
                   </Link>
                 </li>
-              </div>
+              </>
+            ) : (
+              <li className="menu-has-children">
+                <Link to="#">
+                  {username}
+                </Link>
+                <ul>
+                  <li>
+                    <Link to="#">Khoá học của tôi</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Chứng nhận của tôi</Link>
+                  </li>
+                  <li>
+                    <Link to="#">Giỏ hàng</Link>
+                  </li>
+                  <li>
+                    <Link to="#" onClick={handleLogout}>
+                      Đăng xuất
+                    </Link>
+                  </li>
+                </ul>
+              </li>
             )}
             {/* Un,Lin,Rter */}
 
@@ -155,6 +154,8 @@ function Header() {
         {/* end menu  */}
       </div>
     </header>
+
+    </>
   );
 }
 
