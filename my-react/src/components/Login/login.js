@@ -24,7 +24,7 @@ function Login() {
           </Link>
         </h1>
       </div>
-      <input type="email" name="email" placeholder="Email" />
+      <input type="email" name="email" placeholder="Username" />
       <input type="password" name="Password" placeholder="Mật khẩu" />
       <button type="submit" onClick={handleLogin}>
         Đăng nhập

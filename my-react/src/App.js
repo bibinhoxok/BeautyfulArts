@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer/footer';
 import Header from './components/Header/header';
@@ -9,48 +9,64 @@ import CourseList from './components/Course/courseList';
 import CourseDetail from './components/Course/courseDetail';
 import CreateCourse from './components/Course/createCourse';
 import CourseManagement from './components/Course/courseManagement';
-import EmployeeHeader from './components/Header/headerEmployee';
+import InstructorHeader from './components/Header/hearderInstructor';
+import DefaultHeader from './components/Header/header';
 
 function App() {
   // Simulate user data with role information (1 for customer, 2 for instructor, 3 for staff, 4 for admin)
-  const user = { role: 2 }; // Change the role as needed
-
-  // Define a navigate function
-  const navigate = useNavigate();
-
-  // Define routes for different roles
-  const customerRoutes = (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/courseList" element={<CourseList />} />
-        <Route path="/courseDetail" element={<CourseDetail />} />
-      </Routes>
-      <Footer />
-    </>
-  );
-
-  const employeeRoutes = (
-    <>
-      <EmployeeHeader />
-      <Routes>
-        <Route path="/courseManagement" element={<CourseManagement />} />
-      </Routes>
-      <Footer />
-    </>
-  );
+  const user = { role: null }; // Change the role as needed
+  
 
   return (
     <BrowserRouter>
+      {/* Header */}
+      {user.role === 2 ? (
+        <Header />
+      ) : user.role === 1 || user.role === 3 || user.role === 4  ? (
+        <InstructorHeader />
+      ) : (
+        <DefaultHeader /> // Render a default header when the user doesn't have a role
+      )}
+      {/* End header */}
+
+      {/* Routes */}
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/createCourse" element={<CreateCourse />} />
-        {user.role === 1 && customerRoutes}
-        {user.role >= 2 && employeeRoutes}
-        {/* Add more roles as needed */}
+        
+        {/* Customer routes */}
+        {user.role === 2 ? (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/courseList" element={<CourseList />} />
+            <Route path="/courseDetail" element={<CourseDetail />} />
+          </>
+        ) : null}
+         {/* End customer routes */}
+
+        {/* Instructor routes */}
+        {user.role === 3 ? (
+          <>
+            <Route path="/courseManagement" element={<CourseManagement />} />
+            <Route path="/courseList" element={<CourseList />} />
+            <Route path="/courseDetail" element={<CourseDetail />} />
+            <Route path="/createCourse" element={<CreateCourse />} />
+          </>
+        ) : null}
+        {/* End Instructor routes */}
+        {/* Staff routes */}
+        {user.role === 1 || user.role === 4 ? (
+          <>
+            <Route path="/courseList" element={<CourseList />} />
+            <Route path="/courseDetail" element={<CourseDetail />} />
+          </>
+        ) : null}
+        {/* End Staff routes */}
       </Routes>
+      {/* End routes */}
+
+      <Footer/>
     </BrowserRouter>
   );
 }
