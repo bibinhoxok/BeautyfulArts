@@ -3,13 +3,21 @@ import { Link } from 'react-router-dom';
 
 function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const user = { role: null };
 
   const handleLogin = () => {
     // Simulate a successful login
     setLoggedIn(true);
 
     // Redirect to another page after a successful login
-    window.location.href = '/baner'; // You can replace '/' with the desired URL
+    let username = 'your-username'; // Replace with the actual username
+    if (user.role === 2) {
+      window.location.href = `/baner/${username}`;
+    } else if (user.role === 3) {
+      window.location.href = `/courseManagement/${username}`;
+    } else if (user.role === 1 || user.role === 4) {
+      window.location.href = `/websiteManagement/${username}`;
+    }
   };
 
   return (
@@ -24,12 +32,12 @@ function Login() {
           </Link>
         </h1>
       </div>
-      <input type="email" name="email" placeholder="Username" />
+      <input type="text" name="username" placeholder="Tên đăng nhập" />
       <input type="password" name="Password" placeholder="Mật khẩu" />
       <button type="submit" onClick={handleLogin}>
         Đăng nhập
       </button>
-      <Link to="https://www.google.com/">Đăng ký</Link>
+      <Link to="/register">Đăng ký</Link>
     </div>
   );
 }

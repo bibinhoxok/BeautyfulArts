@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Login from '../Login/login';
-import Register from '../Register/register';
-import { Routes, Route } from 'react-router-dom';
+import { Link, useParams } from "react-router-dom";
+// import Login from '../Login/login';
+// import Register from '../Register/register';
+// import { Routes, Route } from 'react-router-dom';
 
 function Header() {
   // Define loggedIn, username, and handleLogout based on your application's logic.
   const loggedIn = true; // Example: true if the user is logged in
-  const username = "User123"; // Example: the logged-in user's username
+  const { username } = useParams(); // Example: the logged-in user's username
   // Sample course data - you can fetch this from your backend
   const courses = [
     {
