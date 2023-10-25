@@ -21,7 +21,7 @@ function Login() {
   };
 
   return (
-    <div className="login-form">
+    <div className="login-form" style={{display: selected ? 'none':'block'}}>
       <Link to="#" className="close-form">
         x
       </Link>

@@ -3,14 +3,15 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer/footer';
 import Header from './components/Header/header';
 import Home from './components/Home/baner';
-import Login from './components/Login/login';
-import Register from './components/Register/register';
+import Login from './components/Account/login';
+import Register from './components/Account/register';
 import CourseList from './components/Course/courseList';
 import CourseDetail from './components/Course/courseDetail';
 import CreateCourse from './components/Course/createCourse';
 import CourseManagement from './components/Course/courseManagement';
 import InstructorHeader from './components/Header/hearderInstructor';
 import DefaultHeader from './components/Header/header';
+import Feedback from './components/User/feedback';
 
 function App() {
   // Simulate user data with role information (1 for customer, 2 for instructor, 3 for staff, 4 for admin)
@@ -41,6 +42,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/courseList" element={<CourseList />} />
             <Route path="/courseDetail" element={<CourseDetail />} />
+            <Route path="/feedback" element={<Feedback />} />
           </>
         ) : null}
          {/* End customer routes */}

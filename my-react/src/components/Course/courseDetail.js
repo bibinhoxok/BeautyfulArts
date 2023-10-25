@@ -31,7 +31,7 @@ function CourseDetail() {
               <h2>{course.price}</h2>
               {course.enrolled ? (
                 <Link
-                  to="/CourseDetail"
+                  to="/LearningCourse"
                   onClick={() => handleEnrollOrPurchase(course.id)}
                 >
                   Vào học
