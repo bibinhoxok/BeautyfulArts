@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
   const user = { role: null };
+  const [selected, setSelected] = useState(true); // Define and initialize the selected state
 
   const handleLogin = () => {
     // Simulate a successful login

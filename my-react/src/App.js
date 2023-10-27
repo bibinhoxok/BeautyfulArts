@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer/footer';
 import Header from './components/Header/header';
+import DefaultHeader from './components/Header/header';
+import EmployeeHeader from './components/Header/hearderEmployee';
 import Home from './components/Home/baner';
 import Login from './components/Account/login';
 import Register from './components/Account/register';
@@ -9,8 +11,6 @@ import CourseList from './components/Course/courseList';
 import CourseDetail from './components/Course/courseDetail';
 import CreateCourse from './components/Course/createCourse';
 import CourseManagement from './components/Course/courseManagement';
-import InstructorHeader from './components/Header/hearderInstructor';
-import DefaultHeader from './components/Header/header';
 import Feedback from './components/User/feedback';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       {user.role === 2 ? (
         <Header />
       ) : user.role === 1 || user.role === 3 || user.role === 4  ? (
-        <InstructorHeader />
+        <EmployeeHeader />
       ) : (
         <DefaultHeader /> // Render a default header when the user doesn't have a role
       )}
