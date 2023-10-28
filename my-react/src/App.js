@@ -31,9 +31,6 @@ function App() {
       )}
       {/* End header */}
 
-      {/* Navigation Component (always visible) */}
-      {/* <Nav /> */}
-
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
