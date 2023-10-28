@@ -9,27 +9,8 @@ function Header() {
   const loggedIn = true; // Example: true if the user is logged in
   const { username } = useParams(); // Example: the logged-in user's username
   // Sample course data - you can fetch this from your backend
-  const courses = [
-    {
-      id: 1,
-      name: "Course 1",
-      instructor: "Instructor 1",
-      price: "$49.99",
-      createDate: "2023-10-15",
-      enrolled: true, // Example: User is enrolled
-      image: "course1.jpg",
-    },
-    {
-      id: 2,
-      name: "Course 2",
-      instructor: "Instructor 2",
-      price: "$59.99",
-      createDate: "2023-10-20",
-      enrolled: false, // Example: User is not enrolled
-      image: "course2.jpg",
-    },
-    // Add more course data here
-  ];
+  const [courses, setCourses] = useState([]);
+
 
   // State to manage the search input and results
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,12 +34,11 @@ function Header() {
   };
 
   return (
-
-    <><header className="main-header" id="header">
+    <header className="main-header" id="header">
       <div className="container">
         <div id="logo" className="pull-left">
           <h1>
-            <Link to="#body" className="scrollto">
+            <Link to="/baner" className="scrollto">
               Beautyful <span>Arts</span>
             </Link>
           </h1>
@@ -72,7 +52,8 @@ function Header() {
               placeholder="Tên khoá học, chủ đề, tác giả"
               className="search-input form-control"
               value={searchQuery}
-              onChange={handleSearchInputChange} />
+              onChange={handleSearchInputChange}
+            />
             <button type="button" className="search-button">
               <i className="fa fa-search"></i>
               <i className="fa-solid fa-magnifying-glass"></i>
@@ -84,22 +65,18 @@ function Header() {
         {/* Menu  */}
         <nav id="nav-menu-container">
           <ul className="nav-menu">
-
             {/* Course */}
             <li className="menu-has-children">
               <Link to="#">Khóa học</Link>
               <ul>
                 <li>
-                  <Link to="#">Toàn bộ khóa học</Link>
+                  <Link to="/courseList">Toàn bộ khóa học</Link>
                 </li>
                 <li>
-                  <Link to="#">Khóa học theo chủ đề</Link>
+                  <Link to="/courseList">Khóa học mới</Link>
                 </li>
                 <li>
-                  <Link to="#">Khóa học mới</Link>
-                </li>
-                <li>
-                  <Link to="#">Khóa học miễn phí</Link>
+                  <Link to="/courseList">Khóa học miễn phí</Link>
                 </li>
               </ul>
             </li>
@@ -114,30 +91,30 @@ function Header() {
 
             {/* Un,Lin,Rter */}
             {loggedIn ? (
-              <><li>
-                <Link to="#" className="btn-sign-up">
-                  Đăng kí
-                </Link>
-              </li><li>
-                  <Link to="#" className="btn-log-in">
+              <>
+                <li>
+                  <Link to="/login" className="btn-sign-up">
+                    Đăng kí
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register" className="btn-log-in">
                     Đăng nhập
                   </Link>
                 </li>
               </>
             ) : (
               <li className="menu-has-children">
-                <Link to="#">
-                  {username}
-                </Link>
+                <Link to="#">{username}</Link>
                 <ul>
                   <li>
-                    <Link to="#">Khoá học của tôi</Link>
+                    <Link to="/myCourse">Khoá học của tôi</Link>
                   </li>
                   <li>
                     <Link to="#">Chứng nhận của tôi</Link>
                   </li>
                   <li>
-                    <Link to="#">Giỏ hàng</Link>
+                    <Link to="/cart">Giỏ hàng</Link>
                   </li>
                   <li>
                     <Link to="#" onClick={handleLogout}>
@@ -148,14 +125,11 @@ function Header() {
               </li>
             )}
             {/* Un,Lin,Rter */}
-
           </ul>
         </nav>
         {/* end menu  */}
       </div>
     </header>
-
-    </>
   );
 }
 

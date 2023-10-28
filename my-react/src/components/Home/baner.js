@@ -44,7 +44,6 @@ function Banner() {
       />
     </div>
   </section>
-
 {/* Main */}
 <main id="main">
     {/* About Section  */}

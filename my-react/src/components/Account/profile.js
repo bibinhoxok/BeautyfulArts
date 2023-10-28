@@ -1,37 +1,12 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Profile() {
-    return <>
+  const [user] = useParams();
+    return (<>
     {/* table element */}
     <div style={{ display: "block", height: "200%" }}>
       <div className="app-container">
-        <div className="col-12 col-md-3">
-          <div className="image">
-            <img
-              src="https://i.insider.com/602ee9d81a89f20019a377c6?width=1136&format=jpeg"
-              width="100%"
-              height="100%"
-              alt=""
-            />
-          </div>
-          <div id="sidebar">
-            <header>
-              <Link to="#">Username</Link>
-            </header>
-            <ul className="nav">
-              <li className="sidebar-list-item active">
-                <Link to="#">Thông tin tài khoản</Link>
-              </li>
-              <li>
-                <Link to="#">quản lí khóa học</Link>
-              </li>
-              <li>
-                <Link to="#">đăng khóa học</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className="col-md-9 col-12">
           <div>
             <p className="title">Thông tin tài khoản</p>
@@ -44,11 +19,7 @@ function Profile() {
                 <div className="col-md-6 col-12">
                   <div className="row no-gutters mb-1">
                     <div className="col-md-4 col-12 label">Họ tên:</div>
-                    <div className="col-md-6 col-12">Dương Đặng Nam</div>
-                  </div>
-                  <div className="row no-gutters mb-1">
-                    <div className="col-md-4 col-12 label">Giới tính:</div>
-                    <div className="col-md-6 col-12">Nam</div>
+                    <div className="col-md-6 col-12"{user.username}</div>
                   </div>
                   <div className="row no-gutters mb-1">
                     <div className="col-md-4 col-12 label">Số điện thoại:</div>
@@ -148,7 +119,6 @@ function Profile() {
           </div>
         </div>
       </div>
-    </div>
     <div style={{ height: "30vh" }} />
     {/*Info form */}
     <div className="info-form">
@@ -175,7 +145,7 @@ function Profile() {
       <input type="text" name="email" placeholder="abcxyz" />
       <button type="submit">hoàn tất</button>
     </div>
-  </>
+  </>)
 ;  
 }
 

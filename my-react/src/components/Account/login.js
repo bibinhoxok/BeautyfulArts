@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const user = { role: null };
+  const [user, setUser] = useState([]);
   const [selected, setSelected] = useState(true); // Define and initialize the selected state
 
   const handleLogin = () => {
@@ -11,13 +11,12 @@ function Login() {
     setLoggedIn(true);
 
     // Redirect to another page after a successful login
-    let username = 'your-username'; // Replace with the actual username
     if (user.role === 2) {
-      window.location.href = `/baner/${username}`;
+      window.location.href = `/baner/${user}`;
     } else if (user.role === 3) {
-      window.location.href = `/courseManagement/${username}`;
+      window.location.href = `/courseManagement/${user}`;
     } else if (user.role === 1 || user.role === 4) {
-      window.location.href = `/websiteManagement/${username}`;
+      window.location.href = `/websiteManagement/${user}`;
     }
   };
 
