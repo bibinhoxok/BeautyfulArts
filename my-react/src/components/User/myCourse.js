@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Sidebar from './sidebarCustomer';
 
 function MyCourse() {
     const [courses, setCourses] = useState([]);
@@ -12,6 +13,7 @@ function MyCourse() {
 
     return(
     <div className="products-row">
+    <Sidebar/>
       {courses.map((course) => (
         <Link to="/LearningCourse" key={course.id}>
           <button className="cell-more-button">

@@ -6,8 +6,12 @@ function Header() {
 
   // Function to handle logout
   const handleLogout = () => {
-    // Your logout logic here
-    // You might clear user session, state, or perform API requests.
+    // Clear the user session (you'll need to implement this logic based on your authentication mechanism)
+    // For example, if you are using localStorage:
+    localStorage.removeItem('userToken'); // Clear the user token
+
+    // Redirect the user to the home page
+    window.location.href ='/banner';
   };
 
   return (
@@ -39,9 +43,7 @@ function Header() {
                   <Link to="#">Tài khoản của tôi</Link>H
                 </li>
                 <li>
-                  <Link to="#" onClick={handleLogout}>
-                    Đăng xuất
-                  </Link>
+                <button onClick={handleLogout}>Đăng xuất</button>
                 </li>
               </ul>
             </li>

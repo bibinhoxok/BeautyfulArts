@@ -4,7 +4,7 @@ import Footer from "./components/Footer/footer";
 import Header from "./components/Header/header";
 import DefaultHeader from "./components/Header/header";
 import EmployeeHeader from "./components/Header/hearderEmployee";
-import Home from "./components/Home/baner";
+import Home from "./components/Home/banner";
 import Login from "./components/Account/login";
 import Register from "./components/Account/register";
 import CourseList from "./components/Course/courseList";

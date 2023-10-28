@@ -1,43 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Sidebar from './sidebarCustomer';
 
 function Cart () {
     return<>
     {/* table element */}
     <div style={{ display: "block", height: "200%" }}>
       <div className="app-container">
-        <div className="col-12 col-md-3">
-          <div className="image">
-            <img
-              src="https://i.insider.com/602ee9d81a89f20019a377c6?width=1136&format=jpeg"
-              width="100%"
-              height="100%"
-              alt=''
-            />
-          </div>
-          <div id="sidebar">
-            <header>
-              <Link to="#">Username</Link>
-            </header>
-            <ul className="nav">
-              <li>
-                <Link to="#">Thông tin tài khoản</Link>
-              </li>
-              <li>
-                <Link to="#">Khoá học của tôi</Link>
-              </li>
-              <li>
-                <Link to="#">Chứng nhận của tôi</Link>
-              </li>
-              <li className="sidebar-list-item active">
-                <Link to="#">Giỏ hàng</Link>
-              </li>
-              <li>
-                <Link to="#">Lịch sử giao dịch</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Sidebar/>
         <div className="col-md-9 col-12">
           <div id="wrap">
             <div id="grid">

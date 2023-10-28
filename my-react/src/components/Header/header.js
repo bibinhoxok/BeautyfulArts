@@ -10,6 +10,7 @@ function Header() {
   const { username } = useParams(); // Example: the logged-in user's username
   // Sample course data - you can fetch this from your backend
   const [courses, setCourses] = useState([]);
+  
 
 
   // State to manage the search input and results
@@ -18,8 +19,12 @@ function Header() {
 
   // Function to handle logout
   const handleLogout = () => {
-    // Your logout logic here
-    // You might clear user session, state, or perform API requests.
+    // Clear the user session (you'll need to implement this logic based on your authentication mechanism)
+    // For example, if you are using localStorage:
+    localStorage.removeItem('userToken'); // Clear the user token
+
+    // Redirect the user to the home page
+    window.location.href ='/banner';
   };
 
   // Function to handle the search input change
@@ -110,16 +115,14 @@ function Header() {
                   <li>
                     <Link to="/myCourse">Khoá học của tôi</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="#">Chứng nhận của tôi</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/cart">Giỏ hàng</Link>
                   </li>
                   <li>
-                    <Link to="#" onClick={handleLogout}>
-                      Đăng xuất
-                    </Link>
+                  <button onClick={handleLogout}>Đăng xuất</button>
                   </li>
                 </ul>
               </li>
