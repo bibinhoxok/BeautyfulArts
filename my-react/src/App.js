@@ -1,3 +1,4 @@
+import React, {useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "./components/Footer/footer";
@@ -12,10 +13,21 @@ import CourseDetail from "./components/Course/courseDetail";
 import CreateCourse from "./components/Course/createCourse";
 import CourseManagement from "./components/Course/courseManagement";
 import Feedback from "./components/User/feedback";
+import productApi from "./api/productApi";
 // import Profile from './components/Account/profile';
 // import Nav from "./components/Nav/nav";
 
 function App() {
+  useEffect(() => {
+    const fetchProducts = async () => {
+      // const params = {
+      //   -limit: 10,
+      // };
+      const productList = await productApi.getAll();
+      console.log(productList);
+    };
+    fetchProducts();
+  }, [])
   // Simulate user data with role information (1 for customer, 2 for instructor, 3 for staff, 4 for admin)
   const user = { role: null }; // Change the role as needed
 
