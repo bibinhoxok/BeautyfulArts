@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 // import Login from '../Login/login';
 // import Register from '../Register/register';
 // import { Routes, Route } from 'react-router-dom';
@@ -10,6 +10,7 @@ function Header() {
   const { username } = useParams(); // Example: the logged-in user's username
   // Sample course data - you can fetch this from your backend
   const [courses, setCourses] = useState([]);
+  const navigate = useNavigate();
   
 
 
@@ -98,9 +99,10 @@ function Header() {
             {loggedIn ? (
               <>
                 <li>
-                  <Link to="/login" className="btn-sign-up">
+                <button onClick={()=>navigate('/register')}>Đăng ký</button>
+                  {/* <Link to="/login" className="btn-sign-up">
                     Đăng kí
-                  </Link>
+                  </Link> */}
                 </li>
                 <li>
                   <Link to="/register" className="btn-log-in">
