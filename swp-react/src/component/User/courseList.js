@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getAllCourses } from '../api/CourseApi';
 
 function CourseList() {
   const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    // Fetch all courses when the component mounts
+    getAllCourses()
+      .then((coursesData) => setCourses(coursesData))
+      .catch((error) => console.error('Error fetching courses:', error));
+  }, []);
 
   // Function to handle enrollment or purchase
   const handleEnrollOrPurchase = (courseId) => {

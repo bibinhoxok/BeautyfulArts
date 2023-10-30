@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { searchCourses } from '../api/CourseApi';
 
 function Header({ user }, {courses}) {
   const loggedIn = user != null; // Check if a user is logged in
@@ -10,7 +11,7 @@ function Header({ user }, {courses}) {
   };
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [setSearchResults] = useState([]);
 
   const handleLogout = () => {
     // Clear the user session (implement your logout logic)
@@ -21,12 +22,12 @@ function Header({ user }, {courses}) {
 
   const handleSearchInputChange = (e) => {
     setSearchQuery(e.target.value);
-    // In a real application, send a request to your server to fetch search results
-    // For this example, filter the courses based on the search query.
-    const filteredResults = courses.filter((course) =>
-      course.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setSearchResults(filteredResults);
+    // Call the searchCourses API function and update the search results
+    searchCourses(searchQuery).then((results) => setSearchResults(results))
+      .catch((error) => {
+        console.error('Error searching courses:', error);
+        setSearchResults([]);
+      });
   };
 
   return (
