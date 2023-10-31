@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Sidebar from "../Sidebar/instructor";
 import Table from 'react-bootstrap/Table';
 import Button from "react-bootstrap/Button";
@@ -6,13 +7,14 @@ import { getCoursesByInstructorId } from "../api/CourseApi";
 
 function CourseManagement() {
   const [courses, setCourses] = useState([]);
+  const { instructorId } = useParams();
 
   useEffect(() => {
     // Fetch all courses when the component mounts
-    getCoursesByInstructorId()
+    getCoursesByInstructorId(instructorId)
       .then((coursesData) => setCourses(coursesData))
       .catch((error) => console.error('Error fetching courses:', error));
-  }, []);
+  }, [instructorId]);
 
   return (
     <div>

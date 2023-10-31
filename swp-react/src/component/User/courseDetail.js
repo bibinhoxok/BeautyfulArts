@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getAllCourses } from '../api/CourseApi';
+import { getCourseDetail } from '../api/CourseApi';
 
 function CourseDetail() {
-  const [courses, setCourses] = useState([]); // Initialize courses as an empty array
+  const [course, setCourse] = useState({});
   const { id } = useParams();
-  const course = courses.find((course) => course.id === parseInt(id, 10));
 
   useEffect(() => {
-    // Fetch all courses when the component mounts
-    getAllCourses()
-      .then((coursesData) => setCourses(coursesData))
-      .catch((error) => console.error('Error fetching courses:', error));
-  }, []);
-
+    // Fetch the course details when the component mounts
+    getCourseDetail(id)
+      .then((courseData) => setCourse(courseData))
+      .catch((error) => console.error('Error fetching course details:', error));
+  }, [id]);
 
   const handleEnrollOrPurchase = (courseId) => {
     // Your logic to enroll or purchase a course based on courseId
@@ -39,17 +37,11 @@ function CourseDetail() {
               <p>{course.description}</p>
               <h2>{course.price}</h2>
               {course.enrolled ? (
-                <Link
-                  to="/LearningCourse"
-                  onClick={() => handleEnrollOrPurchase(course.id)}
-                >
+                <Link to="/LearningCourse" onClick={() => handleEnrollOrPurchase(course.id)} >
                   Vào học
                 </Link>
               ) : (
-                <Link
-                  to="/Cart"
-                  onClick={() => handleEnrollOrPurchase(course.id)}
-                >
+                <Link to="/Cart" onClick={() => handleEnrollOrPurchase(course.id)} >
                   Mua khóa học
                 </Link>
               )}
