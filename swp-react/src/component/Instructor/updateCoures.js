@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getAllCourses } from '../api/CourseApi';
+import { useParams } from "react-router-dom";
+import { getCourseDetail } from '../api/CourseApi';
 
 function CourseDetail() {
-  const [courses, setCourses] = useState([]); // Initialize courses as an empty array
-  const { id } = useParams();
-  const course = courses.find((course) => course.id === parseInt(id, 10));
+  const { courseId } = useParams(); // Extract the courseId parameter from the URL
+
+  const [course, setCourse] = useState({});
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [status, setStatus] = useState('');
+  const [isDeleted, setIsDeleted] = useState('');
 
   useEffect(() => {
-    // Fetch all courses when the component mounts
-    getAllCourses()
-      .then((coursesData) => setCourses(coursesData))
-      .catch((error) => console.error('Error fetching courses:', error));
-  }, []);
+    // Fetch course details when the component mounts
+    getCourseDetail(courseId) // Pass the courseId to the getCourseDetail function
+      .then((courseData) => {
+        setCourse(courseData);
+        setName(courseData.name);
+        setDescription(courseData.description);
+        setPrice(courseData.price);
+        setStatus(courseData.status);
+        setIsDeleted(courseData.isDeleted);
+      })
+      .catch((error) => console.error('Error fetching course details:', error));
+  }, [courseId]);
 
-
-  const handleEnrollOrPurchase = (courseId) => {
-    // Your logic to enroll or purchase a course based on courseId
-    console.log(`User enrolled or purchased Course ${courseId}`);
+  const handleUpdateCourse = () => {
+    // Implement your course update logic here
   };
 
   return (
@@ -29,12 +39,15 @@ function CourseDetail() {
             <div className="col-lg-6 about-img">
               <img src={course.image} alt="" />
             </div>
+            <h2>Chi tiết khóa học</h2>
             <div className="col-lg-6 content">
-              <h2>{course.name}</h2>
-              <h3>{course.instructor}</h3>
-              <p>{course.description}</p>
-              <h2>{course.price}</h2>
-              <button>Chỉnh sửa</button>
+              <input type="text" name="name" placeholder={course.name} value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" name="description" placeholder={course.description} value={description} onChange={(e) => setDescription(e.target.value)} />
+              <input type="text" name="price" placeholder={course.price} value={price} onChange={(e) => setPrice(e.target.value)} />
+              <input type="text" name="status" placeholder={course.status} value={status} onChange={(e) => setStatus(e.target.value)} />
+              <p>{course.createDate}</p>
+              <input type="text" name="isDeleted" placeholder={course.isDeleted} value={isDeleted} onChange={(e) => setIsDeleted(e.target.value)} />
+              <button type="submit" onClick={handleUpdateCourse}>Chỉnh sửa</button>
             </div>
           </div>
         </div>

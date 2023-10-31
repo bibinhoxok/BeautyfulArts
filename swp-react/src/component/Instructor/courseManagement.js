@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Sidebar from "../Sidebar/instructor";
 import Table from 'react-bootstrap/Table';
 import Button from "react-bootstrap/Button";
-import axios from "axios";
+import { getCoursesByInstructorId } from "../api/CourseApi";
 
 function CourseManagement() {
-  const [user] = useParams();
   const [courses, setCourses] = useState([]);
 
-//   useEffect((=>{
-//     axios.get("https://reqres.in/api/users?page=1").then(date)
-//   },[]))
+  useEffect(() => {
+    // Fetch all courses when the component mounts
+    getCoursesByInstructorId()
+      .then((coursesData) => setCourses(coursesData))
+      .catch((error) => console.error('Error fetching courses:', error));
+  }, []);
 
   return (
     <div>
@@ -56,32 +57,34 @@ function CourseManagement() {
                   </div>
                 </div>
               </div> */}
-              {courses.map((course) => (
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Course name</th>
-                      <th>Price</th>
-                      <th>Create Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Course name</th>
+                    <th>Price</th>
+                    <th>Create Date</th>
+                    <th>Details</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {courses.map((course) => (
+                    <tr key={course.id}>
                       <td>{course.id}</td>
                       <td>{course.name}</td>
                       <td>{course.price}</td>
                       <td>{course.createDate}</td>
                       <td>
-                        <Button href="/updateCourse/:course.id">Detail</Button>
+                        <Button href={`/updateCourse/${course.id}`}>Detail</Button>
                       </td>
                       <td>
-                        <Button href="/deleteCourse/:course.id">Delete</Button>
+                        <Button href={`/deleteCourse/${course.id}`}>Delete</Button>
                       </td>
                     </tr>
-                  </tbody>
-                </Table>
-              ))}
+                  ))}
+                </tbody>
+              </Table>
             </div>
           </div>
         </div>
