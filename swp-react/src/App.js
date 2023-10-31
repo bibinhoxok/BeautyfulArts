@@ -3,10 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./component/User/header";
 import Footer from "./component/User/footer";
 import Home from "./component/User/home";
-// import CourseManagement from "./component/Instructor/courseManagement";
+import CourseManagement from "./component/Instructor/courseManagement";
 // import AccountManagement from "./component/Employee/accountManagement";
 import Login from "./component/User/login";
 import Register from "./component/User/register";
+import Profile from "./component/User/profile";
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/courseManagement" element={<CourseManagement />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />}/>
         </Routes>
         <Footer />
       </BrowserRouter>
