@@ -10,6 +10,12 @@ import Register from "./component/User/register";
 import Profile from "./component/User/profile";
 import CourseList from "./component/User/courseList";
 import CourseDetail from "./component/User/courseDetail";
+import MyCourse from "./component/Customer/myCourse";
+import Learning from "./component/Customer/learningCourse";
+import Cart from "./component/Customer/cart";
+import Feedback from "./component/Customer/feedback";
+import CreateCourse from "./component/Instructor/createCourse";
+import UpdateCourse from "./component/Instructor/updateCoures";
 
 function App() {
   return (
@@ -27,6 +33,12 @@ function App() {
           <Route path="/profile" element={<Profile />}/>
           <Route path="/courseList" element={<CourseList/>} />
           <Route path="/courseDetail" element={<CourseDetail/>} />
+          <Route path="/myCourse" element={<MyCourse/>} />
+          <Route path="/learning" element={<Learning/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/feedback" element={<Feedback/>} />
+          <Route path="/createCourse" element={<CreateCourse/>} />
+          <Route path="/updateCourse" element={<UpdateCourse/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

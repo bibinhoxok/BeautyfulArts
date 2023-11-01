@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getMyCourses } from '../api/CourseApi';
+import { getMyCourse } from '../api/CourseApi';
 
 function CourseList() {
     const [courses, setCourses] = useState([]);
@@ -8,7 +8,7 @@ function CourseList() {
 
     useEffect(() => {
         // Fetch user's courses when the component mounts
-        getMyCourses(customerId)
+        getMyCourse(customerId)
             .then((coursesData) => setCourses(coursesData))
             .catch((error) => console.error('Error fetching courses:', error));
     }, [customerId]);
