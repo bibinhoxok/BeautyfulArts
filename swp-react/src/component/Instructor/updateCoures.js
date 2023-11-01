@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getCourseDetail } from '../api/CourseApi';
+import Sidebar from "../Sidebar/instructor";
+
 
 function CourseDetail() {
   const { courseId } = useParams(); // Extract the courseId parameter from the URL
@@ -35,6 +37,7 @@ function CourseDetail() {
       {/* Course Detail */}
       <section id="about" className="wow fadeInUp">
         <div className="container">
+        <Sidebar/>
           <div className="row">
             <div className="col-lg-6 about-img">
               <img src={course.image} alt="" />
@@ -49,6 +52,16 @@ function CourseDetail() {
               <input type="text" name="isDeleted" placeholder={course.isDeleted} value={isDeleted} onChange={(e) => setIsDeleted(e.target.value)} />
               <button type="submit" onClick={handleUpdateCourse}>Chỉnh sửa</button>
             </div>
+            {/* <h2>Chi tiết các bài học</h2>
+            <div className="col-lg-6 content">
+              <input type="text" name="title" placeholder={course.name} value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" name="description" placeholder={course.description} value={description} onChange={(e) => setDescription(e.target.value)} />
+              <input type="text" name="price" placeholder={course.price} value={price} onChange={(e) => setPrice(e.target.value)} />
+              <input type="text" name="status" placeholder={course.status} value={status} onChange={(e) => setStatus(e.target.value)} />
+              <p>{course.createDate}</p>
+              <input type="text" name="isDeleted" placeholder={course.isDeleted} value={isDeleted} onChange={(e) => setIsDeleted(e.target.value)} />
+              <button type="submit" onClick={handleUpdateCourse}>Chỉnh sửa</button>
+            </div> */}
           </div>
         </div>
       </section>
