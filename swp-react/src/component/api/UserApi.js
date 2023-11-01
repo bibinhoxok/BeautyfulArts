@@ -30,10 +30,10 @@ async function registerUser(username, email, password) {
   }
 }
 
-async function loginUser(username, password) {
+async function loginUser(email, password) {
   try {
     // Authenticate the user on the server. Replace with your actual API endpoint.
-    const response = await axiosClient.post('/api/login', { username, password });
+    const response = await axiosClient.post('/api/login', { email, password });
     return response.data;
   } catch (error) {
     console.error('Error logging in:', error);
