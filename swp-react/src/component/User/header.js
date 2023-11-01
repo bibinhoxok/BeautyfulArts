@@ -114,10 +114,14 @@ function Header({ user }, {courses}) {
                 </ul>
               </li>
             ) : (
+              <>
               <li>
-                <button onClick={handleRedirect}>Đăng nhập</button>
-                <button onClick={() => navigate("/register")}>Đăng ký</button>
+                <button class="btn-sign-up" onClick={handleRedirect}>Đăng nhập</button>
               </li>
+              <li>
+                <button class="btn-log-in" onClick={() => navigate("/register")}>Đăng ký</button>
+              </li>
+              </>
             )}
             {/* End User Actions */}
           </ul>
