@@ -1,5 +1,8 @@
-import axiosClient from './axios';
+import axios from 'axios';
 
+const axiosClient = axios.create({
+  baseURL: 'https://localhost:7129',
+});
 async function getUsers() {
   try {
     // Fetch user data from the server. Replace with your actual API endpoint.
@@ -22,7 +25,7 @@ async function saveUsers(users) {
 async function registerUser(username, email, password) {
   try {
     // Register a new user on the server. Replace with your actual API endpoint.
-    const response = await axiosClient.post('/User/register', { username, email, password });
+    const response = await axiosClient.post('/User/Register', { username, email, password });
     return response.data;
   } catch (error) {
     console.error('Error registering the user:', error);
@@ -32,12 +35,12 @@ async function registerUser(username, email, password) {
 
 async function loginUser(email, password) {
   try {
-    // Authenticate the user on the server. Replace with your actual API endpoint.
-    const response = await axiosClient.post('/api/login', { email, password });
+    // Gọi API sử dụng axiosClient với đường dẫn tương đối
+    const response = await axiosClient.post('/User/Login', { email, password });
     return response.data;
   } catch (error) {
     console.error('Error logging in:', error);
-    return null; // Return null when login fails
+    return null; // Trả về null khi đăng nhập thất bại
   }
 }
 
@@ -52,4 +55,15 @@ async function editProfile(userId, updatedData) {
   }
 }
 
+loginUser('your_username', 'your_password')
+  .then(responseData => {
+    if (responseData) {
+      console.log('Login successful:', responseData);
+    } else {
+      console.log('Login failed');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 export { getUsers, saveUsers, registerUser, loginUser, editProfile };
