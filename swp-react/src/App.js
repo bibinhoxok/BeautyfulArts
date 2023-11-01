@@ -8,6 +8,8 @@ import AccountManagement from "./component/Employee/accountManagement";
 import Login from "./component/User/login";
 import Register from "./component/User/register";
 import Profile from "./component/User/profile";
+import CourseList from "./component/User/courseList";
+import CourseDetail from "./component/User/courseDetail";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />}/>
+          <Route path="/courseList" element={<CourseList/>} />
+          <Route path="/courseDetail" element={<CourseDetail/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
