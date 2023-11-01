@@ -4,7 +4,7 @@ import Header from "./component/User/header";
 import Footer from "./component/User/footer";
 import Home from "./component/User/home";
 import CourseManagement from "./component/Instructor/courseManagement";
-// import AccountManagement from "./component/Employee/accountManagement";
+import AccountManagement from "./component/Employee/accountManagement";
 import Login from "./component/User/login";
 import Register from "./component/User/register";
 import Profile from "./component/User/profile";
@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home/>}/>
           <Route path="/courseManagement" element={<CourseManagement />} />
+          <Route path="/accountManagement" element={<AccountManagement />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />}/>
