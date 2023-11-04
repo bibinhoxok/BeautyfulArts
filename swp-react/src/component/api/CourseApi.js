@@ -1,4 +1,8 @@
-import axiosClient from './axios';
+import axios from './axios';
+
+const axiosClient = axios.create({
+  baseURL: 'https://localhost:7129',
+});
 
 // Function to fetch all courses
 async function getAllCourses() {

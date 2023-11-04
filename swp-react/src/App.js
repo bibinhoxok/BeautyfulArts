@@ -15,7 +15,7 @@ import Learning from "./component/Customer/learningCourse";
 import Cart from "./component/Customer/cart";
 import Feedback from "./component/Customer/feedback";
 import CreateCourse from "./component/Instructor/createCourse";
-import UpdateCourse from "./component/Instructor/updateCoures";
+import UpdateCourse from "./component/Instructor/updateCourse";
 
 function App() {
   return (

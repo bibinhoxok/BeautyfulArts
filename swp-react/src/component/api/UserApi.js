@@ -66,4 +66,5 @@ loginUser('your_username', 'your_password')
   .catch(error => {
     console.error('Error:', error);
   });
+
 export { getUsers, saveUsers, registerUser, loginUser, editProfile };
