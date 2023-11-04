@@ -85,10 +85,8 @@ function CreateCourse() {
     const { courseId } = useParams();
 
     useEffect(() => {
-        // You can fetch existing materials for this course here and update the `materials` state.
-        // Example:
         getMaterials(courseId).then((materialsData) => setMaterials(materialsData));
-      }, [courseId]); // Make sure to provide the appropriate courseId
+      }, [courseId]); 
 
     return <div>
         <Sidebar />
@@ -110,6 +108,7 @@ function CreateCourse() {
                                             type="text"
                                             className="title-material form-control"
                                             placeholder="SKETCHNOTE CÙNG HỌA SỸ XUÂN LAN 2023"
+                                            value={name} onChange={(e) => setName(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -121,6 +120,7 @@ function CreateCourse() {
                                             className="description-couse form-control"
                                             placeholder=""
                                             height="100px"
+                                            value={description} onChange={(e) => setDescription(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -131,6 +131,7 @@ function CreateCourse() {
                                             type="number"
                                             className="price form-control"
                                             placeholder={500000}
+                                            value={price} onChange={(e) => setPrice(e.target.value)}
                                         />
                                     </div>
                                 </div>

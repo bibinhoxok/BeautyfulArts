@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getCourseDetail } from '../api/CourseApi';
 import Sidebar from "../Sidebar/instructor";
+import Modal from 'react-bootstrap/Modal';
 
 
 function CourseDetail() {
