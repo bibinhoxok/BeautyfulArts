@@ -20,6 +20,34 @@ async function addMaterial(materialData) {
   }
 }
 
+// Function to update an existing material
+async function updateMaterial(materialId, updatedMaterialData) {
+  try {
+    const response = await axiosClient.put(`/materials/${materialId}`, updatedMaterialData);
+
+    if (response.status !== 200) {
+      throw new Error("Failed to update material.");
+    }
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+// Function to delete a material
+async function deleteMaterial(materialId) {
+  try {
+    const response = await axiosClient.delete(`/materials/${materialId}`);
+
+    if (response.status !== 204) {
+      throw new Error("Failed to delete material.");
+    }
+  } catch (error) {
+    throw error;
+  }
+}
+
 // Function to get a list of materials for a specific course
 async function getMaterials(courseId) {
   try {
@@ -35,4 +63,4 @@ async function getMaterials(courseId) {
   }
 }
 
-export { getMaterials, addMaterial };
+export { getMaterials, addMaterial, updateMaterial, deleteMaterial };
