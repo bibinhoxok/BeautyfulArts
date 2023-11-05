@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { searchCourses } from '../api/CourseApi';
+import { useUser } from './Context';
 
-function Header({ user }, {courses}) {
+function Header() {
+  const { user } = useUser();
   const loggedIn = user != null; // Check if a user is logged in
   const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ function Header({ user }, {courses}) {
     // Clear the user session (implement your logout logic)
     // For example, remove the user token and redirect to the home page
     localStorage.removeItem("userToken");
-    window.location.href = "/home";
+    window.location.href = "/";
   };
 
   const handleSearchInputChange = (e) => {

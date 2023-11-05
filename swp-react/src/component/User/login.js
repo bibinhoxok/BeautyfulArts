@@ -2,30 +2,44 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../api/UserApi';
 import { toast } from 'react-toastify';
+import { useUser } from './Context';
 
 function Login() {
+  const { setUser } = useUser();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      toast.error("Email/Password is required!");
-      return;
-    }
-
     try {
+      if (!email || !password) {
+        toast.error('Email and password are required.');
+        return;
+      }
+
       const userData = await loginUser(email, password);
 
-      if (userData) {
+      if (userData && userData.token) {
+        // Save the token to local storage
+        localStorage.setItem('token', userData.token);
+        // Store the user data in the context
+        setUser(userData);
+
         // Redirect based on user's role or other criteria
-        if (userData.role === 2) {
-          navigate(`/home/${userData.username}`);
-        } else if (userData.role === 3) {
-          navigate(`/courseManagement/${userData.username}`);
-        } else if (userData.role === 1 || userData.role === 4) {
-          navigate(`/accountManagement/${userData.username}`);
-        }
+        switch (userData.role) {
+          case 2:
+            navigate('/home');
+            break;
+          case 3:
+            navigate('/courseManagement');
+            break;
+          case 1:
+          case 4:
+            navigate('/accountManagement');
+            break;
+          default:
+            toast.error('Invalid user role.');
+        }        
       } else {
         // Handle login failure
         toast.error('Login failed. Please check your credentials.');
@@ -37,10 +51,24 @@ function Login() {
   };
 
   return (
-    <div className='login-controller'>
-      <input type="text" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" name="password" placeholder="Mật khẩu" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit" onClick={handleLogin}>Đăng nhập</button>
+    <div className="login-controller">
+      <input
+        type="text"
+        name="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Mật khẩu"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit" onClick={handleLogin}>
+        Đăng nhập
+      </button>
     </div>
   );
 }

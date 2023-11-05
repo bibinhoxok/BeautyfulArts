@@ -147,8 +147,8 @@ function CreateCourse() {
                                 <th>Id</th>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>FileUrl</th>
-                                <th>Course lId</th>
+                                <th>File Url</th>
+                                <th>Course Id</th>
                                 <th>Creation Date</th>
                                 <th>Is Delete</th>
                                 <th>Action</th>
