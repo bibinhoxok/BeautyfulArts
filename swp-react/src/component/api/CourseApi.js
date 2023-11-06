@@ -44,4 +44,16 @@ async function getMyCourse(customerId) {
   return response.data;
 }
 
-export { getAllCourses, getCourseDetail, searchCourses, updateCourse, createCourse, getCoursesByInstructorId, getMyCourse };
+async function deleteCourse(courseId) {
+  try {
+    const response = await axiosClient.delete(`/api/courses/${courseId}`);
+
+    if (response.status !== 204) {
+      throw new Error("Failed to delete course.");
+    }
+  } catch (error) {
+    throw error;
+  }
+}
+
+export { getAllCourses, getCourseDetail, searchCourses, updateCourse, createCourse, getCoursesByInstructorId, getMyCourse, deleteCourse };

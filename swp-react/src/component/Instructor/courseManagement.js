@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../Sidebar/instructor";
 import Table from 'react-bootstrap/Table';
 import Button from "react-bootstrap/Button";
-import { getCoursesByInstructorId  } from "../api/CourseApi";
+import { getCoursesByInstructorId,  deleteCourse  } from "../api/CourseApi";
 
 function CourseManagement() {
   const [courses, setCourses] = useState([]);
@@ -15,6 +15,17 @@ function CourseManagement() {
       .then((coursesData) => setCourses(coursesData))
       .catch((error) => console.error('Error fetching courses:', error));
   }, [instructorId]);
+
+  const handleDeleteCourse = async (courseId) => {
+    try {
+      await deleteCourse(courseId);
+      // Remove the deleted course from the courses state
+      const updatedCourses = courses.filter((course) => course.id !== courseId);
+      setCourses(updatedCourses);
+    } catch (error) {
+      console.error("Failed to delete course:", error);
+    }
+  };
 
   return (
     <div>
@@ -78,7 +89,7 @@ function CourseManagement() {
                       <td>{course.creationDate}</td>
                       <td>
                         <Button href={`/updateCourse/${course.id}`}>Chi tiết</Button>
-                      {/* <Button type="submit" onClick={() => handleDeleteCourse(course.id)}>Xóa</Button> */}
+                      <Button type="submit" onClick={() => handleDeleteCourse(course.id)}>Xóa</Button>
                       </td>
                     </tr>
                   ))}
