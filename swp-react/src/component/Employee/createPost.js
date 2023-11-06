@@ -1,18 +1,42 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-function Example() {
-  const [show, setShow] = useState(false);
 
+function CreatePost() {
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // Tạo một state riêng cho từng trường
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [userId, setUserId] = useState('');
+
+  // Hàm xử lý khi nhấn nút "Lưu"
+  const handleAddPost = () => {
+    // Tạo đối tượng post từ dữ liệu nhập vào
+    const newPost = {
+      title: title,
+      content: content,
+      UserId: userId,
+      creationDate: new Date().toISOString(),
+      isDelete: 1,
+    };
+
+    // Thực hiện lưu bài viết (gọi API hoặc xử lý khác ở đây)
+    // Sau khi hoàn thành, bạn có thể đóng Modal
+    // và cập nhật danh sách bài viết nếu cần
+    console.log('New Post:', newPost);
+
+    // Đóng Modal
+    handleClose();
+  };
 
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Tạo bài viết
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -20,30 +44,34 @@ function Example() {
           <Modal.Title>Tạo bài viết</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Tiêu đề</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="title"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-          </Form> */}
+          <input
+            type="text"
+            name="title"
+            placeholder="Tựa đề"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            name="content"
+            placeholder="Nội dung"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+          <input
+            type="number"
+            name="userId"
+            placeholder="User ID"
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Đóng
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button variant="primary" onClick={handleAddPost}>
+            Lưu
           </Button>
         </Modal.Footer>
       </Modal>
@@ -51,4 +79,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default CreatePost;

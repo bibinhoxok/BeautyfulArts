@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../Sidebar/instructor";
 import Table from 'react-bootstrap/Table';
 import Button from "react-bootstrap/Button";
-import { getCoursesByInstructorId,  deleteCourse  } from "../api/CourseApi";
+import { getCoursesByInstructorId, deleteCourse } from "../api/CourseApi";
 
 function CourseManagement() {
   const [courses, setCourses] = useState([]);
@@ -89,7 +89,7 @@ function CourseManagement() {
                       <td>{course.creationDate}</td>
                       <td>
                         <Button href={`/updateCourse/${course.id}`}>Chi tiết</Button>
-                      <Button type="submit" onClick={() => handleDeleteCourse(course.id)}>Xóa</Button>
+                        <Button type="submit" onClick={() => handleDeleteCourse(course.id)}>Xóa</Button>
                       </td>
                     </tr>
                   ))}
