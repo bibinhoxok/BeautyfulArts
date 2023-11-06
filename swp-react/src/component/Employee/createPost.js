@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import { createPost } from '../api/PostApi'; 
 
 function CreatePost() {
   const [show, setShow] = useState(false);
@@ -14,24 +14,27 @@ function CreatePost() {
   const [userId, setUserId] = useState('');
 
   // Hàm xử lý khi nhấn nút "Lưu"
-  const handleAddPost = () => {
-    // Tạo đối tượng post từ dữ liệu nhập vào
-    const newPost = {
-      title: title,
-      content: content,
-      UserId: userId,
-      creationDate: new Date().toISOString(),
-      isDelete: 1,
-    };
-
-    // Thực hiện lưu bài viết (gọi API hoặc xử lý khác ở đây)
-    // Sau khi hoàn thành, bạn có thể đóng Modal
-    // và cập nhật danh sách bài viết nếu cần
-    console.log('New Post:', newPost);
-
-    // Đóng Modal
-    handleClose();
+  const handleAddPost = async () => {
+    try {
+      const newPost = {
+        title: title,
+        content: content,
+        UserId: userId, 
+        creationDate: new Date().toISOString(),
+        isDeleted: false, 
+      };
+  
+      const addedPost = await createPost(newPost);
+  
+      console.log('Newly added post:', addedPost);
+  
+      handleClose();
+    } catch (error) {
+      console.error('Lỗi khi tạo bài viết:', error);
+      // Xử lý lỗi nếu cần
+    }
   };
+  
 
   return (
     <>
