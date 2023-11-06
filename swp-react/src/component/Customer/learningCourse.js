@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { getMaterials } from '../api/MaterialApi';
+import Feedback from './feedback';
 
 function Learn() {
     const [materials, setMaterials] = useState([]);
@@ -62,9 +63,7 @@ function Learn() {
                             <img src="../img/top_APHAN.jpg" alt="." />
                             <div className="video-info-recommend">
                                 <span className="recommend-video-title">
-                                    <a href="/feedback" className="feedback">
-                                        Phản hồi và đánh giá chất lượng bài học
-                                    </a>
+                                    <Feedback/>
                                 </span>
                                 <div className="creator-name">
                                     <p>{course.userId}</p>

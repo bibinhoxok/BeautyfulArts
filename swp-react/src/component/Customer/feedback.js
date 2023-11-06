@@ -1,28 +1,73 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
+import { sendFeedback } from '../api/FeedbackApi';
 
-function Feedback() {
-    return<div className="feedback-form">
-    <Link to="#" className="close-form">
-      x
-    </Link>
-    <div id="logo">
-      <h1>
-        <a href="#body" className="scrollto">
-          Beautiful <span>Arts</span>
-        </a>
-      </h1>
+function Feedback({ courseId }) {
+  const [show, setShow] = useState(false);
+  const [feedbackData, setFeedbackData] = useState({
+    content: '',
+    courseEnrollUserId: '',
+    courseEnrollCourseId: courseId,
+    courseEnrollId: '',
+  });
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleSendFeedback = async () => {
+    try {
+      // Gửi đối tượng feedbackData
+      await sendFeedback(feedbackData);
+      // Đóng modal và đặt lại trường nhập
+      handleClose();
+    } catch (error) {
+      console.error('Error sending feedback:', error);
+    }
+  };
+
+  return (
+    <div>
+      <Button variant="primary" onClick={handleShow}>
+        Phản hồi và đánh giá chất lượng bài học
+      </Button>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Phản Hồi</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input
+            type="text"
+            name="content"
+            placeholder="Nội dung"
+            value={feedbackData.content}
+            onChange={(e) => setFeedbackData({ ...feedbackData, content: e.target.value })}
+          />
+          <input
+            type="text"
+            name="courseEnrollUserId"
+            placeholder="User ID"
+            value={feedbackData.courseEnrollUserId}
+            onChange={(e) => setFeedbackData({ ...feedbackData, courseEnrollUserId: e.target.value })}
+          />
+          <input
+            type="text"
+            name="courseEnrollId"
+            placeholder="Enroll ID"
+            value={feedbackData.courseEnrollId}
+            onChange={(e) => setFeedbackData({ ...feedbackData, courseEnrollId: e.target.value })}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Đóng
+          </Button>
+          <Button variant="primary" onClick={handleSendFeedback}>
+            Gửi
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
-    <input type="text" name="title" placeholder="tiêu đề" />
-    <input
-      type="text"
-      name="content"
-      className="content"
-      placeholder="nội dung"
-    />
-    <button type="submit">Gửi</button>
-  </div>
-;  
+  );
 }
 
 export default Feedback;
