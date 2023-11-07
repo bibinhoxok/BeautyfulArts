@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Sidebar from "../Sidebar/instructor";
 import Modal from "react-bootstrap/Modal";
 import { addMaterial, getMaterials, updateMaterial, deleteMaterial } from "../api/MaterialApi";
-import { getCourseDetail, updateCourse as updateCourseApi} from "../api/CourseApi";
+import { getCourseDetail, updateCourse as updateCourseApi } from "../api/CourseApi";
 
 function AddMaterial(props) {
   const { courseId, materials, setMaterials } = props;
@@ -51,7 +51,7 @@ function AddMaterial(props) {
           <Modal.Title>Tạo bài học</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {courseId}
+          {courseId}
           <input
             type="text"
             name="title"
@@ -73,13 +73,13 @@ function AddMaterial(props) {
             value={materialData.fileUrl}
             onChange={(e) => setMaterialData({ ...materialData, fileUrl: e.target.value })}
           />
-          <input
-            type="text"
-            name="isDeleted"
-            placeholder="isDeleted"
+          <select
             value={materialData.isDeleted}
             onChange={(e) => setMaterialData({ ...materialData, isDeleted: e.target.value })}
-          />
+          >
+            <option value="1">True</option>
+            <option value="0">False</option>
+          </select>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -238,13 +238,14 @@ function UpdateCourse() {
             <div className="row no-gutters mb-1">
               <div className="col-md-4 col-12 label">Ẩn/Hiện</div>
               <div className="col-md-6 col-12">
-                <input
-                  type="number"
-                  className="isDeleted form-control"
-                  placeholder={course.isDeleted}
+                <select
                   value={isDeleted}
                   onChange={(e) => setIsDeleted(e.target.value)}
-                />
+                >
+                  <option value={course.isDelete}>{course.isDelete}</option>
+                  <option value="1">True</option>
+                  <option value="0">False</option>
+                </select>
               </div>
             </div>
             <div className="row no-gutters mb-1">
@@ -299,7 +300,7 @@ function UpdateCourse() {
                         name="fileUrl"
                         placeholder={material.fileUrl}
                         value={material.fileUrl}
-                        onChange={(e) => handleUpdateMaterial(material.id, e.target.name,  e.target.value)}
+                        onChange={(e) => handleUpdateMaterial(material.id, e.target.name, e.target.value)}
                       />
                     </td>
                     <td>{material.courseId}</td>
@@ -311,6 +312,14 @@ function UpdateCourse() {
                         value={material.isDeleted}
                         onChange={(e) => handleUpdateMaterial(material.id, e.target.name, e.target.value)}
                       />
+                      <select
+                        value={material.isDeleted}
+                        onChange={(e) => handleUpdateMaterial(material.id, e.target.name, e.target.value)}
+                      >
+                        <option value={material.isDeleted}>{material.isDeleted}</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
                     </td>
                     <td>
                       <Button

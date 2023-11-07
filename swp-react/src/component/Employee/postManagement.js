@@ -63,7 +63,7 @@ function PostManagement() {
             <Sidebar />
             <div className="post-table">
                 <span>Các bài viết</span>
-                <AddPost/>
+                <AddPost />
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -101,13 +101,14 @@ function PostManagement() {
                                 <td>{post.userId}</td>
                                 <td>{post.creationDate}</td>
                                 <td>
-                                    <input
-                                        type="text"
-                                        name="isDelete"
-                                        placeholder={post.isDelete}
+                                    <select
                                         value={postData.isDelete}
                                         onChange={(e) => setPostData({ ...postData, isDelete: e.target.value })}
-                                    />
+                                    >
+                                        <option value={post.isDelete}>{post.isDelete}</option>
+                                        <option value="1">True</option>
+                                        <option value="0">False</option>
+                                    </select>
                                 </td>
                                 <td>
                                     <Button type="submit" onClick={() => handleUpdatePost(post.id)}>
