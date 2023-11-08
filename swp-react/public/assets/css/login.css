@@ -1,4 +1,4 @@
-.login-form img, .register-form img {
+.login-controller img, .register-controller img {
     display: block;
     width: 80px;
     margin: 30px auto;
@@ -6,24 +6,21 @@
     border-radius: 50%;
 }
 
-.login-form, .register-form {
-    display: none;
-    z-index: 14;
+.login-controller, .register-controller {
+    display: block;
     flex-direction: column;
     padding: 0px;
     width: 40vmax;
     height: 50vh;
     overflow-y: auto;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.35), 0 0 22px 6px rgba(0, 0, 0, 0.5);
-    position: fixed;
+    position: sticky;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
 }
 
-.login-form .close-form, .register-form .close-form {
+.login-controller .close-form, .register-controller .close-form {
     display: flex;
     position: absolute;
     z-index: 15;
@@ -41,13 +38,13 @@
     border-bottom-left-radius: 8px;
 }
 
-.login-form #logo, .register-form #logo {
+.login-controller #logo, .register-controller #logo {
     position: relative;
     text-align: center;
     margin: 15px;
 }
 
-.login-form #logo h1, .register-form #logo h1 {
+.login-controller #logo h1, .register-controller #logo h1 {
     font-size: 42px;
     margin: 0;
     padding: 0;
@@ -56,22 +53,22 @@
     font-weight: 700px;
 }
 
-.login-form #logo h1 a, .register-form #logo h1 a {
+.login-controller #logo h1 a, .register-controller #logo h1 a {
     color: #0c2e8a;
     line-height: 1;
     display: inline-block;
 }
 
-.login-form #logo h1 a span, .register-form #logo h1 a span {
+.login-controller #logo h1 a span, .register-controller #logo h1 a span {
     color: #50d8af;
 }
 
-.login-form #logo img, .register-form #logo img {
+.login-controller #logo img, .register-controller #logo img {
     padding: 0;
     margin: 0;
 }
 
-.login-form input, .register-form input {
+.login-controller input, .register-controller input {
     border-radius: 100px;
     padding: 10px 15px;
     width: 50%;
@@ -81,7 +78,7 @@
     margin: 20px auto 20px auto;
 }
 
-.login-form button, .register-form button {
+.login-controller button, .register-controller button {
     font-family: "Raleway", sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -98,7 +95,7 @@
     margin: 20px auto 10px auto;
 }
 
-.login-form a, .register-form a {
+.login-controller a, .register-controller a {
     font-family: "Raleway", sans-serif;
     font-weight: bold;
     letter-spacing: 1px;

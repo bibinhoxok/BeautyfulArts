@@ -14,8 +14,15 @@ import MyCourse from "./component/Customer/myCourse";
 import Learning from "./component/Customer/learningCourse";
 import Cart from "./component/Customer/cart";
 import Feedback from "./component/Customer/feedback";
-import CreateCourse from "./component/Instructor/createCourse";
+// import CreateCourse from "./component/Instructor/createCourse";
 import UpdateCourse from "./component/Instructor/updateCourse";
+
+
+
+
+
+
+
 
 function App() {
   return (
@@ -37,9 +44,10 @@ function App() {
           <Route path="/learning" element={<Learning/>} />
           <Route path="/cart" element={<Cart/>} />
           <Route path="/feedback" element={<Feedback/>} />
-          <Route path="/createCourse" element={<CreateCourse/>} />
+          {/* <Route path="/createCourse" element={<CreateCourse/>} /> */}
           <Route path="/updateCourse" element={<UpdateCourse/>} />
         </Routes>
+        
         <Footer />
       </BrowserRouter>
     </div>
