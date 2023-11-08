@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { searchCourses } from '../api/CourseApi';
 import { useUser } from './Context';
+import Login from './login';
+import Register from './register';
 
 function Header() {
   const { user } = useUser();
   const loggedIn = user != null; // Check if a user is logged in
   const navigate = useNavigate();
-
-  const handleRedirect = () => {
-    navigate("/login");
-  };
 
   const [searchQuery, setSearchQuery] = useState("");
   const [setSearchResults] = useState([]);
@@ -118,10 +116,10 @@ function Header() {
             ) : (
               <>
               <li>
-                <button class="btn-sign-up" onClick={handleRedirect}>Đăng nhập</button>
+                <Login/>
               </li>
               <li>
-                <button class="btn-log-in" onClick={() => navigate("/register")}>Đăng ký</button>
+                <Register/>
               </li>
               </>
             )}
