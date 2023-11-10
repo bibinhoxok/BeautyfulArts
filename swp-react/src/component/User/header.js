@@ -115,8 +115,8 @@ function Header() {
               </li>
             ) : (
               <>
-                <li><button onClick={() => navigate("/login")}>Đăng nhập</button></li>
-                <li><button onClick={() => navigate("/register")}>Đăng ký</button></li>
+                <li><button className='btn-sign-up' onClick={() => navigate("/login")}>Đăng nhập</button></li>
+                <li><button className='btn-log-in' onClick={() => navigate("/register")}>Đăng ký</button></li>
               </>
             )}
             {/* End User Actions */}

@@ -52,7 +52,6 @@ function Login() {
   };
 
   return (
-    <div>
       <div className='login-controller'>
         <input type="text" name="email" placeholder="Email" value={email}
           onChange={(e) => setEmail(e.target.value)} />
@@ -60,7 +59,6 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)} />
         <button type="submit" onClick={handleLogin}>Đăng nhập</button>
       </div>
-    </div>
   );
 }
 
