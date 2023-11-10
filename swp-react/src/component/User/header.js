@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { searchCourses } from '../api/CourseApi';
 import { useUser } from './Context';
-import Login from './login';
-import Register from './register';
+// import Login from './login';
+// import Register from './register';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
-  const { user } = useUser();
-  // const loggedIn = user != null; // Check if a user is logged in
-  const loggedIn = user !== undefined;
-  console.log(">>> user: ",user);
-  // const navigate = useNavigate();
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [setSearchResults] = useState([]);
 
   const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    window.location.href = "/";
+    logout();
+    navigate('/');
+    toast.success('Đăng xuất thành công!');
   };
 
   const handleSearchInputChange = (e) => {
     setSearchQuery(e.target.value);
-    // Call the searchCourses API function and update the search results
-    searchCourses(searchQuery).then((results) => setSearchResults(results))
+    searchCourses(searchQuery)
+      .then((results) => setSearchResults(results))
       .catch((error) => {
         console.error('Error searching courses:', error);
         setSearchResults([]);
@@ -43,7 +43,7 @@ function Header() {
         </div>
 
         {/* Search Bar */}
-        {(user?.role === 2 || user?.role === null) && (
+        {/* {(user?.role === 2 || user?.role === null) && ( */}
         <div className="nav-menu-search">
           <div className="input-group search-input-group" id="menu-search">
             <input
@@ -59,7 +59,7 @@ function Header() {
             </button>
           </div>
         </div>
-        )}
+        {/* )} */}
 
         {/* Menu */}
         <nav id="nav-menu-container">
@@ -96,7 +96,7 @@ function Header() {
             </li>
 
             {/* User Actions (Login, Register, User Dropdown) */}
-            {loggedIn ? (
+            {user && user.auth === true ? (
               <li className="menu-has-children">
                 <Link to="#">{user.username}</Link>
                 <ul>
@@ -115,12 +115,8 @@ function Header() {
               </li>
             ) : (
               <>
-              <li>
-                <Login/>
-              </li>
-              <li>
-                <Register/>
-              </li>
+                <li><button onClick={() => navigate("/login")}>Đăng nhập</button></li>
+                <li><button onClick={() => navigate("/register")}>Đăng ký</button></li>
               </>
             )}
             {/* End User Actions */}

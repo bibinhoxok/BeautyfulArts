@@ -69,7 +69,7 @@ async function deleteUser(userId) {
   }
 }
 
-loginUser('your_username', 'your_password')
+loginUser('your_email', 'your_password')
   .then(responseData => {
     if (responseData) {
       console.log('Login successful:', responseData);
