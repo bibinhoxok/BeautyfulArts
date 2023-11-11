@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getCourseDetail } from '../api/CourseApi';
+import { addToCart } from '../api/OrderApi';
+import { useUser } from './Context';
+
 
 function CourseDetail() {
   const [course, setCourse] = useState({});
   const { id } = useParams();
+  const { user} = useUser();
 
   useEffect(() => {
     // Fetch the course details when the component mounts
@@ -13,10 +17,20 @@ function CourseDetail() {
       .catch((error) => console.error('Error fetching course details:', error));
   }, [id]);
 
-  const handleEnrollOrPurchase = (courseId) => {
-    // Your logic to enroll or purchase a course based on courseId
-    console.log(`User enrolled or purchased Course ${courseId}`);
+  const handleAddToCart = () => {
+    // Assuming you have user information available (you need userId)
+    const userId = user.id; // Replace with actual userId or get it dynamically
+    addToCart(course.id, userId)
+      .then((response) => {
+        // Handle success, e.g., show a success message
+        console.log('Course added to cart:', response);
+      })
+      .catch((error) => {
+        // Handle error, e.g., show an error message
+        console.error('Error adding to cart:', error);
+      });
   };
+ 
 
   if (!course) {
     return <div>Course not found.</div>;
@@ -37,13 +51,11 @@ function CourseDetail() {
               <p>{course.description}</p>
               <h2>{course.price}</h2>
               {course.enrolled ? (
-                <Link to="/LearningCourse" onClick={() => handleEnrollOrPurchase(course.id)} >
+                <Link to={`/LearningCourse/${course.id}`}>
                   Vào học
                 </Link>
               ) : (
-                <Link to="/Cart" onClick={() => handleEnrollOrPurchase(course.id)} >
-                  Mua khóa học
-                </Link>
+                <button onClick={() => handleAddToCart(course.id)}>Thêm vào giỏ hàng</button>
               )}
             </div>
           </div>

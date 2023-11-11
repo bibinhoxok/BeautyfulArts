@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { searchCourses } from '../api/CourseApi';
 import { useUser } from './Context';
-// import Login from './login';
-// import Register from './register';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {

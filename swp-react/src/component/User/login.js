@@ -5,7 +5,7 @@ import { useUser } from './Context';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const { loginContext, setUser } = useUser();
+  const { loginContext, setUser, user } = useUser();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -26,8 +26,11 @@ function Login() {
         // Store the user data in the context
         setUser(userData);
 
-        // Redirect based on user's role or other criteria
-        switch (userData.role) {
+        // Redirect based on user's role
+        switch (user.role) {
+          case 0:
+            navigate('/home');
+            break;
           case 2:
             navigate('/home');
             break;
@@ -52,13 +55,25 @@ function Login() {
   };
 
   return (
-      <div className='login-controller'>
-        <input type="text" name="email" placeholder="Email" value={email}
-          onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" name="password" placeholder="Mật khẩu" value={password}
-          onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit" onClick={handleLogin}>Đăng nhập</button>
-      </div>
+    <div className='login-controller'>
+      <input
+        type="text"
+        name="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Mật khẩu"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit" onClick={handleLogin}>
+        Đăng nhập
+      </button>
+    </div>
   );
 }
 

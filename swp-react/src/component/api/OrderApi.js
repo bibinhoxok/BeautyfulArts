@@ -29,10 +29,16 @@ async function deleteOrder(orderId) {
   }
 }
 
-// Function to add a new order
-async function addOrder(newOrderData) {
-  const response = await axiosClient.post('/api/orders', newOrderData);
+// Function to add a new order item to the cart
+async function addToCart(courseId, userId) {
+  const orderItemData = {
+    courseId: courseId,
+    userId: userId,
+    // You might want to include additional details like quantity, etc.
+  };
+
+  const response = await axiosClient.post('/api/orders/cart', orderItemData);
   return response.data;
 }
 
-export { getAllOrders, getOrderDetail, deleteOrder, addOrder };
+export { getAllOrders, getOrderDetail, deleteOrder, addToCart };
