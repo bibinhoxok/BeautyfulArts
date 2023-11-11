@@ -5,7 +5,7 @@ import { useUser } from './Context';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const { loginContext, setUser, user } = useUser();
+  const { loginContext, setUser } = useUser();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -17,20 +17,18 @@ function Login() {
         toast.error('Email and password are required.');
         return;
       }
-
+  
       const userData = await loginUser(email, password);
-
+  
       if (userData && userData.token) {
         // Save the token to local storage
         loginContext(email, userData.token);
         // Store the user data in the context
         setUser(userData);
-
+  
         // Redirect based on user's role
-        switch (user.role) {
+        switch (userData.role) { // Use userData.role instead of user.role
           case 0:
-            navigate('/home');
-            break;
           case 2:
             navigate('/home');
             break;
