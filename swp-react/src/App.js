@@ -17,35 +17,35 @@ import UpdateCourse from './component/Instructor/updateCourse';
 function App() {
   // Note: useUser is a function, so you need to invoke it.
   const { user } = useUser();
-  console.log(">>> user: ",user);
+  console.log(">>> user: ", user);
 
   return (
-    <div className="App">
     <UserProvider>
       <CourseProvider>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/courseManagement" element={<CourseManagement />} />
-          <Route path="/accountManagement" element={<AccountManagement />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/courseList" element={<CourseList />} />
-          <Route path="/courseDetail" element={<CourseDetail />} />
-          <Route path="/myCourse" element={<MyCourse />} />
-          <Route path="/learning" element={<Learning />} />
-          {/* <Route path="/cart" element={<Cart />} /> */}
-          <Route path="/updateCourse" element={<UpdateCourse />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+        <BrowserRouter>
+          <Header />
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/courseManagement" element={<CourseManagement />} />
+              <Route path="/accountManagement" element={<AccountManagement />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/courseList" element={<CourseList />} />
+              <Route path="/courseDetail" element={<CourseDetail />} />
+              <Route path="/myCourse" element={<MyCourse />} />
+              <Route path="/learning" element={<Learning />} />
+              {/* <Route path="/cart" element={<Cart />} /> */}
+              <Route path="/updateCourse" element={<UpdateCourse />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
       </CourseProvider>
     </UserProvider>
-    </div>
   );
 }
 
