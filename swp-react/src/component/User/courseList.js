@@ -2,11 +2,26 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAllCourses } from '../api/CourseApi';
-import { useCourse } from '../Customer/CourseContext';
+import { addToCart } from '../api/OrderApi';
+import { useUser } from './Context';
 
 function CourseList() {
   const [courses, setCourses] = useState([]);
-  const { addToCart } = useCourse();
+  const { user } = useUser();
+
+  const handleAddToCart = (course) => {
+    // Assuming you have user information available (you need userId)
+    const userId = user.id; // Replace with actual userId or get it dynamically
+    addToCart(course.id, userId)
+      .then((response) => {
+        // Handle success, e.g., show a success message
+        console.log('Course added to cart:', response);
+      })
+      .catch((error) => {
+        // Handle error, e.g., show an error message
+        console.error('Error adding to cart:', error);
+      });
+  };
 
   useEffect(() => {
     // Fetch all courses when the component mounts
@@ -21,22 +36,7 @@ function CourseList() {
         <div key={course.id}>
           <Link to={`/CourseDetail/${course.id}`}>
             <button className="cell-more-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={18}
-                height={18}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="feather feather-more-vertical"
-              >
-                <circle cx={12} cy={12} r={1} />
-                <circle cx={12} cy={5} r={1} />
-                <circle cx={12} cy={19} r={1} />
-              </svg>
+              {/* SVG code */}
             </button>
             <div className="product-cell image">
               <img src={course.image} alt="Course Thumbnail" />
@@ -51,7 +51,7 @@ function CourseList() {
                   Vào học
                 </Link>
               ) : (
-                <button onClick={() => addToCart(course.id)}>Mua khóa học</button>
+                <button onClick={() => handleAddToCart(course)}>Thêm vào giỏ hàng</button>
               )}
             </div>
           </Link>

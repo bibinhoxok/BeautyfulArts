@@ -1,10 +1,11 @@
 // import React, { useState, useEffect } from "react";
 // import Button from "react-bootstrap/Button";
 // import Sidebar from "../Sidebar/customer";
+// import { useCourse } from '../Customer/CourseContext';
 
 
 // function Cart() {
-//   const [cartItems, setCartItems] = useState([]);
+//   const {cartItems} = useCourse();
 
 //   useEffect(() => {
 //     // Gọi API hoặc truy vấn cơ sở dữ liệu để lấy thông tin sản phẩm trong giỏ hàng.
@@ -102,9 +103,8 @@
 
 // return <div className="cart">
 //     <div>
-//         <h1>Giỏ hàng</h1>
+//         <h1>Giỏ hàng của bạn</h1>
 //         <div className="cartItems">
-//             {}
 //         </div>
 //     </div>
 // </div>
