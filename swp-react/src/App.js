@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { UserProvider, useUser } from './component/User/Context';
-import { CourseProvider } from './component/Customer/CourseContext';
 import Header from './component/User/header';
 import Footer from './component/User/footer';
 import Home from './component/User/home';
