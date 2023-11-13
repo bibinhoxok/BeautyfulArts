@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { getCourseDetail } from '../api/CourseApi';
 import { addToCart } from '../api/OrderApi';
 import { useUser } from './Context';
@@ -24,10 +25,12 @@ function CourseDetail() {
       .then((response) => {
         // Handle success, e.g., show a success message
         console.log('Course added to cart:', response);
+        toast.success('Course added to your cart!');
       })
       .catch((error) => {
         // Handle error, e.g., show an error message
         console.error('Error adding to cart:', error);
+        toast.error('Failed to add course to the cart.');
       });
   };
  

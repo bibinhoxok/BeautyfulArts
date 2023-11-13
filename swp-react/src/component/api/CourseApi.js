@@ -10,6 +10,16 @@ async function getAllCourses() {
   return response.data;
 }
 
+// Function to get a course by name
+async function getCourseByName(courseName) {
+  try {
+    const response = await axiosClient.get(`/api/courses/name/${courseName}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function getCourseDetail() {
   const response = await axiosClient.get('url');
   return response.data;
@@ -56,4 +66,4 @@ async function deleteCourse(courseId) {
   }
 }
 
-export { getAllCourses, getCourseDetail, searchCourses, updateCourse, createCourse, getCoursesByInstructorId, getMyCourse, deleteCourse };
+export { getAllCourses, getCourseByName, getCourseDetail, searchCourses, updateCourse, createCourse, getCoursesByInstructorId, getMyCourse, deleteCourse };

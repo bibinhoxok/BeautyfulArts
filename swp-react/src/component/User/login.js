@@ -17,37 +17,17 @@ function Login() {
         toast.error('Email and password are required.');
         return;
       }
-  
+
       const userData = await loginUser(email, password);
-  
+
       if (userData && userData.token) {
-        // Save the token to local storage
         loginContext(email, userData.token);
-        // Store the user data in the context
         setUser(userData);
-  
-        // Redirect based on user's role
-        switch (userData.role) { // Use userData.role instead of user.role
-          case 0:
-          case 2:
-            navigate('/home');
-            break;
-          case 3:
-            navigate('/courseManagement');
-            break;
-          case 1:
-          case 4:
-            navigate('/accountManagement');
-            break;
-          default:
-            toast.error('Invalid user role.');
-        }
+        navigate('/home');
       } else {
-        // Handle login failure
         toast.error('Login failed. Please check your credentials.');
       }
     } catch (error) {
-      // Handle any API call errors
       toast.error('An error occurred. Please try again later.');
     }
   };
