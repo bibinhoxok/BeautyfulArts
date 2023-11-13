@@ -1,8 +1,8 @@
 import axios from './axios';
 
 const axiosClient = axios.create({
-    baseURL: 'https://localhost:7129',
-  });
+  baseURL: 'https://localhost:7129',
+});
 
 // Function to fetch all orders by userId
 async function getAllOrders(userId) {
@@ -41,4 +41,37 @@ async function addToCart(courseId, userId) {
   return response.data;
 }
 
-export { getAllOrders, getOrderDetail, deleteOrder, addToCart };
+// Function to delete a cart item
+async function deleteCartItem(cartItemId) {
+  try {
+    const response = await axiosClient.delete(`/api/orders/cart/item/${cartItemId}`);
+
+    if (response.status !== 204) {
+      throw new Error("Failed to delete cart item.");
+    }
+  } catch (error) {
+    throw error;
+  }
+}
+
+// Function to get cart items for a specific user
+async function getCartItems(userId) {
+  const response = await axiosClient.get(`/api/orders/cart/${userId}`);
+  return response.data;
+}
+
+async function processPayment(orderId, paymentDetails) {
+  try {
+    const response = await axiosClient.post(`/api/orders/${orderId}/payment`, paymentDetails);
+
+    if (response.status !== 200) {
+      throw new Error("Payment processing failed.");
+    }
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export { getAllOrders, getOrderDetail, deleteOrder, addToCart, deleteCartItem, getCartItems, processPayment };

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal } from 'react-bootstrap';
-import { getAllOrders, getOrderDetail } from '../api/OrderApi'; // Import the necessary functions from OrderApi
+import { getAllOrders, getOrderDetail } from '../api/OrderApi'; 
 import { useUser } from '../User/Context';
-import OrderDetail from './orderDetail'; // Import the OrderDetail component
 
 function OrderHistory() {
   const [orders, setOrders] = useState([]);
