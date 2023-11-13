@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { UserProvider, useUser } from './component/User/Context';
+import { CourseProvider } from './component/Customer/CourseContext';
 import Header from './component/User/header';
 import Footer from './component/User/footer';
 import Home from './component/User/home';
@@ -16,10 +17,9 @@ import UpdateCourse from './component/Instructor/updateCourse';
 function App() {
   // Note: useUser is a function, so you need to invoke it.
   const { user } = useUser();
-  console.log(">>> user: ",user);
+  console.log(">>> user: ", user);
 
   return (
-    <div className="App">
     <UserProvider>
       <BrowserRouter>
         <Header />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/accountManagement" element={<AccountManagement />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/courseList/:searchResults" element={<CourseList />} />
+          <Route path="/courseList" element={<CourseList />} />
           <Route path="/courseDetail" element={<CourseDetail />} />
           <Route path="/myCourse" element={<MyCourse />} />
           <Route path="/learning" element={<Learning />} />
@@ -42,7 +42,6 @@ function App() {
         <Footer />
       </BrowserRouter>
     </UserProvider>
-    </div>
   );
 }
 

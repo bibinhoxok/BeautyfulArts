@@ -8,16 +8,12 @@
 
 .login-controller, .register-controller {
     display: block;
-    flex-direction: column;
+    position: relative;
     padding: 0px;
     width: 40vmax;
     height: 50vh;
-    overflow-y: auto;
     background: white;
-    position: sticky;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+    left: 30%;
 }
 
 .login-controller .close-form, .register-controller .close-form {
